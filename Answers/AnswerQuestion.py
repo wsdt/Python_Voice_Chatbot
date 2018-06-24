@@ -1,7 +1,8 @@
-from _Answer import Answer
+from Answers._Answer import Answer
 
 
-class AskQuestion(Answer):
-    def getAnswer(self):
-        #TODO: implement regex etc.
-        raise NotImplementedError
+class AnswerQuestion(Answer):
+    @staticmethod
+    def getAnswer(userInput):
+        # TODO: implement regex etc.
+        return "Sorry, I didn't understand your question."

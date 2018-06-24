@@ -1,5 +1,6 @@
-from _Answer import Answer
 import random
+from Answers._Answer import Answer
+
 
 class GetRandomFact(Answer):
     facts =  [
@@ -160,6 +161,6 @@ class GetRandomFact(Answer):
         "A champion is someone who gets up when he can't. (Jack Dempsey)"
     ]
 
-
-    def getAnswer(self):
+    @staticmethod
+    def getAnswer(userInput):
         return GetRandomFact.facts[random.randint(0,len(GetRandomFact.facts)-1)]

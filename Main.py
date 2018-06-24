@@ -5,5 +5,5 @@ from PyChatbot import PyChatbot
 chatBotInstance = PyChatbot
 
 # Start chatbot
-PyChatbot.printMenu(chatBotInstance)
+chatBotInstance.printMenu(chatBotInstance)
 

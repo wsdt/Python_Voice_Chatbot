@@ -1,5 +1,8 @@
 import os
-import Answers
+from Answers import AnswerQuestion
+from Answers import AskQuestion
+from Answers import GetRandomFact
+from telegram.ext import Updater, CommandHandler
 
 class PyChatbot():
     VERSION = "0.1"
@@ -38,12 +41,19 @@ class PyChatbot():
     def startChatbot(self):
         os.system('cls' if os.name=='nt' else 'clear')
         while True:
-            print(PyChatbot.getAnswer(self,input(PyChatbot.INPUT_INDICATOR)))
+            print(PyChatbot.getAnswer(input(PyChatbot.INPUT_INDICATOR)))
 
-    def getAnswer(self, userInput):
+    #Method also used by TelegramBot
+    @staticmethod
+    def getAnswer(userInput):
         if "?" in userInput:
-            Answers.AnswerQuestion.getAnswer()
-        return userInput
+            return AnswerQuestion.AnswerQuestion.getAnswer(userInput)
+        elif any(x in userInput for x in ["fact","entertain","quote"]):
+            return GetRandomFact.GetRandomFact.getAnswer(userInput)
+        else:
+            return AskQuestion.AskQuestion.getAnswer(userInput)
+
+
 
     def openSettings(self):
         print("NOTICE: Feature not available (in construction).")

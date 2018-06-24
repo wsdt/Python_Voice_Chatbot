@@ -1,3 +1,4 @@
 class Answer():
-    def getAnswer(self):
+    @staticmethod
+    def getAnswer(userInput):
         raise NotImplementedError
