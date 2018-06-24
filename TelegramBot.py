@@ -1,15 +1,10 @@
 import logging
-from threading import Thread
-
 import os
-
 import sys
 import telegram
 from telegram.error import NetworkError, Unauthorized
 from time import sleep, strftime, gmtime
-
 from telegram.ext import Updater
-
 from PyChatbot import PyChatbot
 
 update_id = None
@@ -46,7 +41,12 @@ def stop_and_restart():
 
 def echo(bot):
     global update_id
-    chat_id = bot.get_updates()[-1].message.chat_id
+
+    # Avoid timeout exception, which might occur when restarting the bot etc.
+    try:
+        chat_id = bot.get_updates()[-1].message.chat_id
+    except telegram.error.TimedOut:
+        return None
 
     # Requests updates after the last update id
     for update in bot.get_updates(offset=update_id, timeout=20000):
@@ -68,6 +68,7 @@ def echo(bot):
                 sleep(2)
                 # answer as text message
                 update.message.reply_text(PyChatbot.getAnswer(text))
+
 
 if __name__ == '__main__':
     main()
