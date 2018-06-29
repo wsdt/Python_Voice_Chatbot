@@ -55,19 +55,22 @@ def echo(bot):
         if update.message:  # your bot can receive updates without messages
             # reply to msg
             text = update.message.text
-            if any(x in text for x in ["pic", "image"]):
-                # Send action
-                bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.UPLOAD_PHOTO)
-                sleep(3)
-                # time attached to avoid caching so each time a new image is sent (so url is unique every time)
-                bot.send_photo(chat_id=chat_id,
-                               photo='https://picsum.photos/400?random' + strftime("%Y-%m-%d_%H-%M-%S", gmtime()))
+            if not text:
+                if any(x in text for x in ["pic", "image"]):
+                    # Send action
+                    bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.UPLOAD_PHOTO)
+                    sleep(3)
+                    # time attached to avoid caching so each time a new image is sent (so url is unique every time)
+                    bot.send_photo(chat_id=chat_id,
+                                   photo='https://picsum.photos/400?random' + strftime("%Y-%m-%d_%H-%M-%S", gmtime()))
+                else:
+                    # Send action
+                    bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.TYPING)
+                    sleep(2)
+                    # answer as text message
+                    update.message.reply_text(str(PyChatbot.getAnswer(text)))
             else:
-                # Send action
-                bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.TYPING)
-                sleep(2)
-                # answer as text message
-                update.message.reply_text(str(PyChatbot.getAnswer(text)))
+                print("ERROR: Message text empty.")
 
 
 if __name__ == '__main__':
