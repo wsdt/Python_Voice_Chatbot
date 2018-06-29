@@ -7,12 +7,11 @@ chatbot = ChatBot(
 )
 
 #Train based on english corpus
-chatbot.train("chatterbot.corpus.english")
+#chatbot.train("chatterbot.corpus.english")
 
 
 class AnswerQuestion(Answer):
     @staticmethod
     def getAnswer(userInput):
-        # TODO: implement regex etc.
         #return "Sorry, I didn't understand your question."
         return chatbot.get_response(userInput)

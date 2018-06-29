@@ -20,7 +20,7 @@ def main():
     # we get an unauthorized exception
     try:
         update_id = bot.get_updates()[0].update_id
-    except IndexError:
+    except (IndexError, telegram.error.TimedOut):
         update_id = None
 
     logging.basicConfig(format=('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
@@ -67,7 +67,7 @@ def echo(bot):
                 bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.TYPING)
                 sleep(2)
                 # answer as text message
-                update.message.reply_text(PyChatbot.getAnswer(text))
+                update.message.reply_text(str(PyChatbot.getAnswer(text)))
 
 
 if __name__ == '__main__':
