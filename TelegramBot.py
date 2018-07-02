@@ -1,16 +1,13 @@
-import logging
 import os
 import sys
 import telegram
 from telegram.error import NetworkError, Unauthorized
 from time import sleep, strftime, gmtime
-from telegram.ext import Updater
+from CONFIDENTIAL import *
 from PyChatbot import PyChatbot
 
 update_id = None
-TOKEN = "440393301:AAHVa5olsKOY66f6NM-lEg1e74pY3jngfCw"
 bot = telegram.Bot(TOKEN)
-updater = Updater(TOKEN)
 
 
 def main():
@@ -23,20 +20,12 @@ def main():
     except (IndexError, telegram.error.TimedOut):
         update_id = None
 
-    logging.basicConfig(format=('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
-
     while True:
         try:
             echo(bot)
         except Unauthorized:
             # The user has removed or blocked the bot
             update_id += 1
-
-
-# Thread(target=stop_and_restart).start()
-def stop_and_restart():
-    updater.stop()
-    os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 def echo(bot):
@@ -55,26 +44,38 @@ def echo(bot):
         if update.message:  # your bot can receive updates without messages
             # reply to msg
             text = update.message.text
-            print("Users message: "+text)
-
-            if any(x in text for x in ["pic", "image"]):
-                # Send action
-                bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.UPLOAD_PHOTO)
-                sleep(3)
-                # time attached to avoid caching so each time a new image is sent (so url is unique every time)
-                bot.send_photo(chat_id=chat_id,
-                               photo='https://picsum.photos/400?random' + strftime("%Y-%m-%d_%H-%M-%S", gmtime()))
+            print("Users message: '"+text+"' from chat_id -> "+str(update.message.chat.id))
+            if isAuthorizedUser(update.message.chat.id):
+                if any(x in text for x in ["pic", "image"]):
+                    # Send action
+                    bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.UPLOAD_PHOTO)
+                    sleep(3)
+                    # time attached to avoid caching so each time a new image is sent (so url is unique every time)
+                    bot.send_photo(chat_id=chat_id,
+                                   photo='https://picsum.photos/400?random' + strftime("%Y-%m-%d_%H-%M-%S", gmtime()))
+                else:
+                    # Send action
+                    bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.TYPING)
+                    sleep(2)
+                    # answer as text message
+                    textAnswer = PyChatbot.getAnswer(text)
+                    try:
+                        #TODO: Why do we get a statementObj sometimes?
+                        update.message.reply_text(str(textAnswer))
+                    except (telegram.error.BadRequest, TypeError):
+                        update.message.reply_text("An internal error occurred :(")
             else:
-                # Send action
-                bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.TYPING)
-                sleep(2)
-                # answer as text message
-                textAnswer = PyChatbot.getAnswer(text)
-                try:
-                    #TODO: Why do we get a statementObj sometimes?
-                    update.message.reply_text(str(textAnswer))
-                except (telegram.error.BadRequest, TypeError):
-                    update.message.reply_text("An internal error occurred :(")
+                update.message.reply_text("FORBIDDEN: Sorry, but I am not allowed to talk with you :).")
+
+# Determines whether users is whitelisted for chatting
+def isAuthorizedUser(chatId):
+    isAuthorized = False
+    for authorizedChatId in AUTHORIZED_USERS:
+        if chatId == authorizedChatId:
+            isAuthorized = True
+
+    return isAuthorized
+
 
 if __name__ == '__main__':
     main()
