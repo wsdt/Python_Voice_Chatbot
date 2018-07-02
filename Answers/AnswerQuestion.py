@@ -7,7 +7,7 @@ chatbot = ChatBot(
 )
 
 #Train based on english corpus
-#chatbot.train("chatterbot.corpus.english")
+chatbot.train("chatterbot.corpus.english")
 
 
 class AnswerQuestion(Answer):
