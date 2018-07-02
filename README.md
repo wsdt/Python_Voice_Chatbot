@@ -1,3 +1,5 @@
-# python_telegram_chatbot
+# python_app
 
-Telegram API key(s) online, as these bots will never go into production. 
+Start main.py to use the chatbot in your console (less functions: e.g. no random pics)
+  *or*
+Start TelegramBot.py to use the full functional chatbot in your Telegram app.
