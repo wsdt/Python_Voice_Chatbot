@@ -45,7 +45,7 @@ def echo(bot):
     # Avoid timeout exception, which might occur when restarting the bot etc.
     try:
         chat_id = bot.get_updates()[-1].message.chat_id
-    except telegram.error.TimedOut:
+    except (IndexError, telegram.error.TimedOut):
         return None
 
     # Requests updates after the last update id
@@ -55,21 +55,26 @@ def echo(bot):
         if update.message:  # your bot can receive updates without messages
             # reply to msg
             text = update.message.text
+            print("Users message: "+text)
+
             if any(x in text for x in ["pic", "image"]):
-				# Send action
+                # Send action
                 bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.UPLOAD_PHOTO)
                 sleep(3)
-				# time attached to avoid caching so each time a new image is sent (so url is unique every time)
+                # time attached to avoid caching so each time a new image is sent (so url is unique every time)
                 bot.send_photo(chat_id=chat_id,
-							   photo='https://picsum.photos/400?random' + strftime("%Y-%m-%d_%H-%M-%S", gmtime()))
+                               photo='https://picsum.photos/400?random' + strftime("%Y-%m-%d_%H-%M-%S", gmtime()))
             else:
-				# Send action
+                # Send action
                 bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.TYPING)
                 sleep(2)
-				# answer as text message
-                update.message.reply_text(str(PyChatbot.getAnswer(text)))
-           
-
+                # answer as text message
+                textAnswer = PyChatbot.getAnswer(text)
+                try:
+                    #TODO: Why do we get a statementObj sometimes?
+                    update.message.reply_text(str(textAnswer))
+                except (telegram.error.BadRequest, TypeError):
+                    update.message.reply_text("An internal error occurred :(")
 
 if __name__ == '__main__':
     main()
