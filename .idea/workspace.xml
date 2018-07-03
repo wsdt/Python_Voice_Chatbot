@@ -10,7 +10,7 @@
       <change beforePath="$PROJECT_DIR$/Answers/AskQuestion.py" afterPath="$PROJECT_DIR$/Answers/AskQuestion.py" />
       <change beforePath="$PROJECT_DIR$/Answers/GetRandomFact.py" afterPath="$PROJECT_DIR$/Answers/GetRandomFact.py" />
       <change beforePath="$PROJECT_DIR$/Answers/_Answer.py" afterPath="$PROJECT_DIR$/Answers/_Answer.py" />
-      <change beforePath="$PROJECT_DIR$/CONFIDENTIAL.py" afterPath="$PROJECT_DIR$/CONFIDENTIAL.py" />
+      <change beforePath="$PROJECT_DIR$/CONFIDENTIAL.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/PyChatbot.py" afterPath="$PROJECT_DIR$/PyChatbot.py" />
       <change beforePath="$PROJECT_DIR$/TelegramBot.py" afterPath="$PROJECT_DIR$/TelegramBot.py" />
     </list>
@@ -39,20 +39,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="CONFIDENTIAL.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CONFIDENTIAL.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -101,7 +87,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="952" />
     <option name="width" value="976" />
     <option name="height" value="1038" />
@@ -342,16 +328,15 @@
       <workItem from="1530134692090" duration="1019000" />
       <workItem from="1530275940531" duration="6146000" />
       <workItem from="1530562026865" duration="5852000" />
-      <workItem from="1530610582210" duration="9139000" />
+      <workItem from="1530610582210" duration="9177000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22982000" />
+    <option name="totallyTimeSpent" value="23020000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -362,7 +347,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43259084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33294255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12620838" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
