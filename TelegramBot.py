@@ -5,6 +5,7 @@ from telegram.error import NetworkError, Unauthorized
 from time import sleep, strftime, gmtime
 from CONFIDENTIAL import *
 from PyChatbot import PyChatbot
+from Answers import AskQuestion
 
 update_id = None
 bot = telegram.Bot(TOKEN)
@@ -38,13 +39,21 @@ def echo(bot):
         return None
 
     # Requests updates after the last update id
-    for update in bot.get_updates(offset=update_id, timeout=600):
+    for update in bot.get_updates(offset=update_id):
         update_id = update.update_id + 1
 
         if update.message:  # your bot can receive updates without messages
             # reply to msg
             text = update.message.text
+            if text is None:
+                # If text is none, then exit
+                print("User has sent a sticker. Just answering with a random question.")
+                AskQuestion.AskQuestion.getAnswer(bot, update, text)
+                return None # stop execution
+
+
             print("Users message: '"+text+"' from chat_id -> "+str(update.message.chat.id))
+
             if isAuthorizedUser(update.message.chat.id):
                 if any(x in text for x in ["pic", "image"]):
                     # Send action
@@ -56,13 +65,7 @@ def echo(bot):
                     # Send action
                     bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.TYPING)
                     # answer as text message
-                    #textAnswer = \
                     PyChatbot.getAnswer(bot,update,text)
-                    """try:
-                        #TODO: Why do we get a statementObj sometimes?
-                        update.message.reply_text(str(textAnswer))
-                    except (telegram.error.BadRequest, TypeError):
-                        update.message.reply_text("An internal error occurred :(")"""
             else:
                 update.message.reply_text("FORBIDDEN: Sorry, but I am not allowed to talk with you :).")
 
