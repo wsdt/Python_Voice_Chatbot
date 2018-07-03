@@ -38,7 +38,7 @@ def echo(bot):
         return None
 
     # Requests updates after the last update id
-    for update in bot.get_updates(offset=update_id, timeout=20000):
+    for update in bot.get_updates(offset=update_id, timeout=600):
         update_id = update.update_id + 1
 
         if update.message:  # your bot can receive updates without messages
@@ -49,32 +49,26 @@ def echo(bot):
                 if any(x in text for x in ["pic", "image"]):
                     # Send action
                     bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.UPLOAD_PHOTO)
-                    sleep(3)
                     # time attached to avoid caching so each time a new image is sent (so url is unique every time)
                     bot.send_photo(chat_id=chat_id,
                                    photo='https://picsum.photos/400?random' + strftime("%Y-%m-%d_%H-%M-%S", gmtime()))
                 else:
                     # Send action
                     bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.TYPING)
-                    sleep(2)
                     # answer as text message
-                    textAnswer = PyChatbot.getAnswer(text)
-                    try:
+                    #textAnswer = \
+                    PyChatbot.getAnswer(bot,update,text)
+                    """try:
                         #TODO: Why do we get a statementObj sometimes?
                         update.message.reply_text(str(textAnswer))
                     except (telegram.error.BadRequest, TypeError):
-                        update.message.reply_text("An internal error occurred :(")
+                        update.message.reply_text("An internal error occurred :(")"""
             else:
                 update.message.reply_text("FORBIDDEN: Sorry, but I am not allowed to talk with you :).")
 
 # Determines whether users is whitelisted for chatting
 def isAuthorizedUser(chatId):
-    isAuthorized = False
-    for authorizedChatId in AUTHORIZED_USERS:
-        if chatId == authorizedChatId:
-            isAuthorized = True
-
-    return isAuthorized
+    return chatId == AUTHORIZED_USER
 
 
 if __name__ == '__main__':

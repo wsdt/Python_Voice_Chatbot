@@ -17,8 +17,10 @@ if trainBot:
     chatbot.train("chatterbot.corpus.english")
 
 
-class AnswerQuestion(Answer):
+class GetSmartAnswer(Answer):
     @staticmethod
-    def getAnswer(userInput):
+    def getAnswer(bot,update,userInput):
         #return "Sorry, I didn't understand your question."
-        return chatbot.get_response(userInput)
+        update.message.reply_text(str(
+            chatbot.get_response(userInput)
+        ))

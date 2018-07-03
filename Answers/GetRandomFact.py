@@ -3,7 +3,10 @@ from Answers._Answer import Answer
 
 
 class GetRandomFact(Answer):
-    facts =  [
+    # Keywords to get this answer
+    chat_keywords = ["fact","entertain","quote"]
+
+    facts = [
         "The way get started is to quit talking and begin doing. (Walt Disney)",
         "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty. (Winston Churchill)",
         "Don't let yesterday take up too much of today. (Will Rogers)",
@@ -162,5 +165,7 @@ class GetRandomFact(Answer):
     ]
 
     @staticmethod
-    def getAnswer(userInput):
-        return GetRandomFact.facts[random.randint(0,len(GetRandomFact.facts)-1)]
+    def getAnswer(bot, update, userInput):
+        update.message.reply_text(str(
+            GetRandomFact.facts[random.randint(0,len(GetRandomFact.facts)-1)]
+        ))
