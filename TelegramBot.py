@@ -4,7 +4,7 @@ import telegram
 from telegram.error import NetworkError, Unauthorized
 from CONFIDENTIAL import *
 from PyChatbot import PyChatbot
-from Answers import AskQuestion
+from Answers.random import AskRandomQuestion
 
 update_id = None
 bot = telegram.Bot(TOKEN)

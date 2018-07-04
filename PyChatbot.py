@@ -1,9 +1,9 @@
 from Answers.GetSmartAnswer import GetSmartAnswer
-from Answers.AskQuestion import AskQuestion
-from Answers.GetRandomFact import GetRandomFact
-from Answers.GetInstagramAnswer import GetInstagramAnswer
+from Answers.random.AskRandomQuestion import AskQuestion
+from Answers.random.GetRandomFact import GetRandomFact
+from Answers.api.GetInstagramAnswer import GetInstagramAnswer
 from Answers.GetWelcomeMsg import GetWelcomeMsg
-from Answers.GetRandomPic import GetRandomPic
+from Answers.random.GetRandomPic import GetRandomPic
 
 
 # Class is responsible for textAnswers.

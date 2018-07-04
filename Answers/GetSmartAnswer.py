@@ -2,7 +2,7 @@ from Answers._Answer import Answer
 import os
 import telegram
 from chatterbot import ChatBot
-from Answers.AskQuestion import AskQuestion
+from Answers.random.AskRandomQuestion import AskQuestion
 
 # Does bot need to be trained?
 trainBot = not os.path.exists('db.sqlite3')
@@ -33,5 +33,5 @@ class GetSmartAnswer(Answer):
             ))
         except telegram.error.BadRequest as e:
             print("ERROR: Telegram Badrequest -> "+str(e))
-            update.message.reply_text("To be honest, I haven't understand this completely. Instead I will ask you sth. :)")
+            update.message.reply_text("To be honest, I haven't understood this completely. Instead I will ask you sth. :)")
             update.message.reply_text(str(AskQuestion.getAnswer(bot, update)))
