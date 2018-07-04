@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb64207e-ff60-4b36-b6cf-a29aa80fa6f2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Answers/home_automization/ReadMe.txt" />
-      <change beforePath="$PROJECT_DIR$/PyChatbot.py" afterPath="$PROJECT_DIR$/PyChatbot.py" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change beforePath="$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py" afterPath="$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +14,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/python_app$TelegramBot.coverage" NAME="TelegramBot Coverage Results" MODIFIED="1530283817400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KEVIN" />
     <SUITE FILE_PATH="coverage/python_app$Main.coverage" NAME="Main Coverage Results" MODIFIED="1530279540423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KEVIN" />
-    <SUITE FILE_PATH="coverage/python_telegram_chatbot$main.coverage" NAME="main Coverage Results" MODIFIED="1530706751574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_telegram_chatbot$main.coverage" NAME="main Coverage Results" MODIFIED="1530707528037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_telegram_chatbot$TelegramBot__1_.coverage" NAME="TelegramBot (1) Coverage Results" MODIFIED="1530706742036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
@@ -35,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ReadMe.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Answers/home_automization/ReadMe.txt">
+      <file leaf-file-name="GetInstagramAnswer.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="56" lean-forward="false" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+            <state relative-caret-position="810">
+              <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,6 +86,7 @@
         <option value="$PROJECT_DIR$/PyChatbot.py" />
         <option value="$PROJECT_DIR$/Answers/GetSmartAnswer.py" />
         <option value="$PROJECT_DIR$/Answers/home_automization/ReadMe.txt" />
+        <option value="$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py" />
       </list>
     </option>
   </component>
@@ -146,12 +145,6 @@
               <item name="python_telegram_chatbot" type="462c0819:PsiDirectoryNode" />
               <item name="Answers" type="462c0819:PsiDirectoryNode" />
               <item name="home_automization" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="python_telegram_chatbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="python_telegram_chatbot" type="462c0819:PsiDirectoryNode" />
-              <item name="Answers" type="462c0819:PsiDirectoryNode" />
-              <item name="random" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -391,12 +384,12 @@
       <workItem from="1530275940531" duration="6146000" />
       <workItem from="1530562026865" duration="5852000" />
       <workItem from="1530610582210" duration="10823000" />
-      <workItem from="1530694717969" duration="7037000" />
+      <workItem from="1530694717969" duration="7689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31703000" />
+    <option name="totallyTimeSpent" value="32355000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -540,14 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="19" column="74" lean-forward="false" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Answers/_Answer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -626,6 +611,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="56" lean-forward="false" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding />
         </state>
       </provider>
