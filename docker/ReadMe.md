@@ -1,0 +1,1 @@
+Expose /sys/-directory into docker container to access GPIO pins in container (for sensors etc.)
