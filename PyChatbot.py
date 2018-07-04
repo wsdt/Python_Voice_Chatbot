@@ -23,7 +23,7 @@ class PyChatbot():
     def getAnswer(bot, update):
         have_answered = False
         for module in PyChatbot.ENABLED_MODULES:
-            # text should be always a str, bc. we validated this in TelegramBot.py
+            # text should be always a str, bc. we validated this in main.py
             if any(x in update.message.text for x in module.chat_keywords):
                 module.getAnswer(bot, update)
                 have_answered = True
