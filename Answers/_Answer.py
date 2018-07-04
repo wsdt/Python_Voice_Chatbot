@@ -6,5 +6,5 @@ from abc import abstractmethod, ABC
 class Answer(ABC):
     @staticmethod
     @abstractmethod
-    def getAnswer(bot,update,userInput):
+    def getAnswer(bot,update):
         raise NotImplementedError

@@ -2,7 +2,6 @@ import os
 import sys
 import telegram
 from telegram.error import NetworkError, Unauthorized
-from time import sleep, strftime, gmtime
 from CONFIDENTIAL import *
 from PyChatbot import PyChatbot
 from Answers import AskQuestion
@@ -47,27 +46,26 @@ def echo(bot):
             text = update.message.text
             if text is None:
                 # If text is none, then exit
-                print("User has sent a sticker. Just answering with a random question.")
-                AskQuestion.AskQuestion.getAnswer(bot, update, text)
-                return None # stop execution
+                return errorOccurred(update)  # stop execution, otherwise bot would die
 
-
-            print("Users message: '"+text+"' from chat_id -> "+str(update.message.chat.id))
-
+            print("Users message: '" + text + "' from chat_id -> " + str(update.message.chat.id))
             if isAuthorizedUser(update.message.chat.id):
-                if any(x in text for x in ["pic", "image"]):
+                try:
                     # Send action
-                    bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.UPLOAD_PHOTO)
-                    # time attached to avoid caching so each time a new image is sent (so url is unique every time)
-                    bot.send_photo(chat_id=chat_id,
-                                   photo='https://picsum.photos/400?random' + strftime("%Y-%m-%d_%H-%M-%S", gmtime()))
-                else:
-                    # Send action
-                    bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.TYPING)
+                    bot.send_chat_action(chat_id=chat_id, action=telegram.ChatAction.TYPING) #pauschal für alle
                     # answer as text message
-                    PyChatbot.getAnswer(bot,update,text)
+                    PyChatbot.getAnswer(bot, update)
+                except telegram.error.TimedOut as e:
+                    print("ERROR: Telegram timeOutException: "+str(e))
             else:
                 update.message.reply_text("FORBIDDEN: Sorry, but I am not allowed to talk with you :).")
+
+
+def errorOccurred(updateObj):
+    print("User has sent e.g. a sticker.")
+    updateObj.message.reply_text("Sorry, but I didn't catch that.")
+    return None  # stop execution of superior method
+
 
 # Determines whether users is whitelisted for chatting
 def isAuthorizedUser(chatId):

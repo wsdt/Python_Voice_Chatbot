@@ -1,11 +1,11 @@
 import random
 from Answers._Answer import Answer
+from Helper import doWithDb
 
 
 class GetRandomFact(Answer):
     # Keywords to get this answer
     chat_keywords = ["fact","entertain","quote"]
-
     facts = [
         "The way get started is to quit talking and begin doing. (Walt Disney)",
         "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty. (Winston Churchill)",
@@ -165,7 +165,7 @@ class GetRandomFact(Answer):
     ]
 
     @staticmethod
-    def getAnswer(bot, update, userInput):
+    def getAnswer(bot, update):
         update.message.reply_text(str(
             GetRandomFact.facts[random.randint(0,len(GetRandomFact.facts)-1)]
         ))

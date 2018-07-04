@@ -5,19 +5,26 @@ import telegram
 from Helper import dict2listByKey
 
 # Prepare instagram api
-igApi = InstagramAPI(INSTAGRAM_API["USERNAME"], INSTAGRAM_API["PASSWORD"])
-igApi.login()
+igApi = None
+
 
 
 # Uses Instagram api to do sth
 class GetInstagramAnswer(Answer):
     @staticmethod
-    def getAnswer(bot,update,userInput):
-        #return "Sorry, I didn't understand your question."
+    def getAnswer(bot,update):
+        # Login in Ig when api is not set yet (here, so we only login if user wants to access ig Api.
+        if igApi is None:
+            GetInstagramAnswer.igLogin()
 
-        reply_btns = [GetInstagramAnswer.prepareAnswer(userInput)] # has to be before, so answer can get updated
+        reply_btns = [GetInstagramAnswer.prepareAnswer(update.message.text)] # has to be before, so answer can get updated
         bot.send_message(chat_id=AUTHORIZED_USER,text=GetInstagramAnswer.answer_text,
                                      reply_markup=telegram.ReplyKeyboardMarkup(reply_btns))
+
+    @staticmethod
+    def igLogin():
+        igApi = InstagramAPI(INSTAGRAM_API["USERNAME"], INSTAGRAM_API["PASSWORD"])
+        igApi.login()
 
     # Craft reply btns and execute command if one is found.
     @staticmethod
