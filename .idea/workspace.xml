@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb64207e-ff60-4b36-b6cf-a29aa80fa6f2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="bb64207e-ff60-4b36-b6cf-a29aa80fa6f2" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/Answers/home_automization/ReadMe.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
-              <caret line="4" column="56" lean-forward="false" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+              <caret line="4" column="56" lean-forward="true" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -85,9 +83,9 @@
         <option value="$PROJECT_DIR$/TelegramBot.py" />
         <option value="$PROJECT_DIR$/PyChatbot.py" />
         <option value="$PROJECT_DIR$/Answers/GetSmartAnswer.py" />
-        <option value="$PROJECT_DIR$/Answers/home_automization/ReadMe.txt" />
         <option value="$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py" />
         <option value="$PROJECT_DIR$/CONFIDENTIAL_Template.py" />
+        <option value="$PROJECT_DIR$/Answers/home_automization/ReadMe.txt" />
       </list>
     </option>
   </component>
@@ -386,12 +384,12 @@
       <workItem from="1530275940531" duration="6146000" />
       <workItem from="1530562026865" duration="5852000" />
       <workItem from="1530610582210" duration="10823000" />
-      <workItem from="1530694717969" duration="8828000" />
+      <workItem from="1530694717969" duration="8930000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33494000" />
+    <option name="totallyTimeSpent" value="33596000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="952" y="0" width="976" height="1038" extended-state="0" />
@@ -628,7 +626,7 @@
     <entry file="file://$PROJECT_DIR$/Answers/home_automization/ReadMe.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
-          <caret line="4" column="56" lean-forward="false" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
+          <caret line="4" column="56" lean-forward="true" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
           <folding />
         </state>
       </provider>
