@@ -4,18 +4,17 @@ from CONFIDENTIAL import INSTAGRAM_API, AUTHORIZED_USER
 import telegram
 from Helper import dict2listByKey
 
-# Prepare instagram api
-igApi = None
-
-
-
 # Uses Instagram api to do sth
 class GetInstagramAnswer(Answer):
+    # Prepare instagram api
+    igApi = None
+
     @staticmethod
     def getAnswer(bot,update):
         # Login in Ig when api is not set yet (here, so we only login if user wants to access ig Api.
-        if igApi is None:
+        if GetInstagramAnswer.igApi is None:
             GetInstagramAnswer.igLogin()
+            print("GetInstagramAnswer: Tried to login to Instagram.")
 
         reply_btns = [GetInstagramAnswer.prepareAnswer(update.message.text)] # has to be before, so answer can get updated
         bot.send_message(chat_id=AUTHORIZED_USER,text=GetInstagramAnswer.answer_text,
@@ -23,8 +22,8 @@ class GetInstagramAnswer(Answer):
 
     @staticmethod
     def igLogin():
-        igApi = InstagramAPI(INSTAGRAM_API["USERNAME"], INSTAGRAM_API["PASSWORD"])
-        igApi.login()
+        GetInstagramAnswer.igApi = InstagramAPI(INSTAGRAM_API["USERNAME"], INSTAGRAM_API["PASSWORD"])
+        GetInstagramAnswer.igApi.login()
 
     # Craft reply btns and execute command if one is found.
     @staticmethod
@@ -49,15 +48,15 @@ class GetInstagramAnswer(Answer):
             if next_max_id is True:
                 next_max_id = ''
 
-            _ = igApi.getUserFollowers(igApi.username_id, maxid=next_max_id)
-            followers.extend(igApi.LastJson.get('users',[]))
-            next_max_id = igApi.LastJson.get('next_max_id','')
+            _ = GetInstagramAnswer.igApi.getUserFollowers(GetInstagramAnswer.igApi.username_id, maxid=next_max_id)
+            followers.extend(GetInstagramAnswer.igApi.LastJson.get('users',[]))
+            next_max_id = GetInstagramAnswer.igApi.LastJson.get('next_max_id','')
         return "You have currently "+str(len(followers))+" Followers on Instagram."
 
     @staticmethod
     def getFollowings():
         # Returns total count of followings of user
-        igApi.getUsernameInfo(INSTAGRAM_API["USERNAME"])
+        GetInstagramAnswer.igApi.getUsernameInfo(INSTAGRAM_API["USERNAME"])
 
         following = []
         next_max_id = True
@@ -66,9 +65,9 @@ class GetInstagramAnswer(Answer):
             if next_max_id is True:
                 next_max_id = ''
 
-            _ = igApi.getUserFollowings(INSTAGRAM_API["USERNAME"], maxid=next_max_id)
-            following.extend(igApi.LastJson.get('users', []))
-            next_max_id = igApi.LastJson.get('next_max_id','')
+            _ = GetInstagramAnswer.igApi.getUserFollowings(INSTAGRAM_API["USERNAME"], maxid=next_max_id)
+            following.extend(GetInstagramAnswer.igApi.LastJson.get('users', []))
+            next_max_id = GetInstagramAnswer.igApi.LastJson.get('next_max_id','')
 
         # Filter by primary key
         unique_following = {
