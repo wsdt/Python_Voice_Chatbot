@@ -48,6 +48,12 @@ def echo(bot):
                 # If text is none, then exit
                 return errorOccurred(update)  # stop execution, otherwise bot would die
 
+            """ If you have no idea what your chat_id is, you can look it up here when writing the
+            first message to the bot. After you noted down your id, you can copy it into your 
+            CONFIDENTIAL.py.
+            
+            This mechanism protects your IoT-devices and private data from strangers. As I am
+            not happy with this validation, I will add here a more secure mechanism in future! """
             print("Users message: '" + text + "' from chat_id -> " + str(update.message.chat.id))
             if isAuthorizedUser(update.message.chat.id):
                 try:
