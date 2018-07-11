@@ -14,16 +14,23 @@ class GetInstagramAnswer(Answer):
         # Login in Ig when api is not set yet (here, so we only login if user wants to access ig Api.
         if GetInstagramAnswer.igApi is None:
             GetInstagramAnswer.igLogin()
-            print("GetInstagramAnswer: Tried to login to Instagram.")
 
-        reply_btns = [GetInstagramAnswer.prepareAnswer(update.message.text)] # has to be before, so answer can get updated
-        bot.send_message(chat_id=AUTHORIZED_USER,text=GetInstagramAnswer.answer_text,
-                                     reply_markup=telegram.ReplyKeyboardMarkup(reply_btns))
+        # Evaluate whether we can access the api or not
+        if GetInstagramAnswer.igApi.isLoggedIn:
+            print("GetInstagramAnswer: Logged in successfully.")
+            reply_btns = [GetInstagramAnswer.prepareAnswer(update.message.text)] # has to be before, so answer can get updated
+            bot.send_message(chat_id=AUTHORIZED_USER,text=GetInstagramAnswer.answer_text,
+                     reply_markup=telegram.ReplyKeyboardMarkup(reply_btns))
+        else:
+            print("GetInstagramAnswer: Could not log in into Instagram account. If you have changed your CONFIDENTIAL.py, then restart your bot.")
+            bot.send_message(chat_id=AUTHORIZED_USER,text="Could not login into Instagram.")
+
 
     @staticmethod
     def igLogin():
         GetInstagramAnswer.igApi = InstagramAPI(INSTAGRAM_API["USERNAME"], INSTAGRAM_API["PASSWORD"])
         GetInstagramAnswer.igApi.login()
+
 
     # Craft reply btns and execute command if one is found.
     @staticmethod
