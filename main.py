@@ -5,6 +5,7 @@ from telegram.error import NetworkError, Unauthorized
 from CONFIDENTIAL import *
 from PyChatbot import PyChatbot
 from Answers.random import AskRandomQuestion
+from Answers.api.test_Voice import test_Voice
 
 update_id = None
 bot = telegram.Bot(TOKEN)
@@ -38,13 +39,15 @@ def echo(bot):
         return None
 
     # Requests updates after the last update id
-    for update in bot.get_updates(offset=update_id):
+    for update in bot.get_updates(offset=update_id, timeout=10000):
         update_id = update.update_id + 1
 
         if update.message:  # your bot can receive updates without messages
             # reply to msg
             text = update.message.text
             if text is None:
+                test_Voice.test(update)
+
                 # If text is none, then exit
                 return errorOccurred(update)  # stop execution, otherwise bot would die
 
@@ -68,7 +71,7 @@ def echo(bot):
 
 
 def errorOccurred(updateObj):
-    print("User has sent e.g. a sticker.")
+    print("User has sent a unsupported message/media (e.g. sticker).")
     updateObj.message.reply_text("Sorry, but I didn't catch that.")
     return None  # stop execution of superior method
 

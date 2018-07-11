@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb64207e-ff60-4b36-b6cf-a29aa80fa6f2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py" afterPath="$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Answers/api/test_Voice.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +16,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/python_app$TelegramBot.coverage" NAME="TelegramBot Coverage Results" MODIFIED="1530283817400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KEVIN" />
     <SUITE FILE_PATH="coverage/python_app$Main.coverage" NAME="Main Coverage Results" MODIFIED="1530279540423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/KEVIN" />
-    <SUITE FILE_PATH="coverage/Python_HomeAssistant$main.coverage" NAME="main Coverage Results" MODIFIED="1531323614684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_HomeAssistant$main.coverage" NAME="main Coverage Results" MODIFIED="1531327579791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_telegram_chatbot$main.coverage" NAME="main Coverage Results" MODIFIED="1530707528037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_telegram_chatbot$TelegramBot__1_.coverage" NAME="TelegramBot (1) Coverage Results" MODIFIED="1530706742036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -34,13 +36,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GetInstagramAnswer.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py">
+      <file leaf-file-name="test_Voice.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Answers/api/test_Voice.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="588">
+              <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
+                <element signature="e#48#82#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,8 +91,11 @@
         <option value="$PROJECT_DIR$/Answers/GetSmartAnswer.py" />
         <option value="$PROJECT_DIR$/CONFIDENTIAL_Template.py" />
         <option value="$PROJECT_DIR$/Answers/home_automization/ReadMe.txt" />
-        <option value="$PROJECT_DIR$/CONFIDENTIAL.py" />
         <option value="$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py" />
+        <option value="$PROJECT_DIR$/CONFIDENTIAL.py" />
+        <option value="$PROJECT_DIR$/docker/Dockerfile" />
+        <option value="$PROJECT_DIR$/Answers/api/test_Voice.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -102,7 +107,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
+    <option name="x" value="-8" />
     <option name="width" value="976" />
     <option name="height" value="1038" />
   </component>
@@ -141,6 +146,16 @@
               <item name="Python_HomeAssistant" type="462c0819:PsiDirectoryNode" />
               <item name="Answers" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python_HomeAssistant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python_HomeAssistant" type="462c0819:PsiDirectoryNode" />
+              <item name="docker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Python_HomeAssistant" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Python_HomeAssistant" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -385,12 +400,12 @@
       <workItem from="1530562026865" duration="5852000" />
       <workItem from="1530610582210" duration="10823000" />
       <workItem from="1530694717969" duration="10313000" />
-      <workItem from="1531322349558" duration="1351000" />
+      <workItem from="1531322349558" duration="5300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36330000" />
+    <option name="totallyTimeSpent" value="40279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -404,8 +419,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40797186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3270809" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5123095" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262159" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16863587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -447,6 +462,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -563,6 +581,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -581,27 +602,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/CONFIDENTIAL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="420">
+          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CONFIDENTIAL.py">
+    <entry file="file://$PROJECT_DIR$/docker/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        <state relative-caret-position="273">
+          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Answers/api/GetInstagramAnswer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="294">
+          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="41" column="65" lean-forward="false" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Answers/api/test_Voice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding>
+            <element signature="e#48#82#0" expanded="true" />
           </folding>
         </state>
       </provider>
