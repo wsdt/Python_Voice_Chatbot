@@ -39,7 +39,7 @@ This project is licensed under Apache 2.0, so contributions/pull-requests are we
 1. **Add a good title to your issue.** Please use a concise and precise title. 
   * *BAD*: "ServiceMgr"
   * *GOOD*: "Redesign/Improve ServiceMgr"
-1. **Add a good description to your issue.** Your description doesn't need to be concise, but should be clear/understandable and provide enough information for other contributors to solve the issue. For that I provided an issue template. 
+2. **Add a good description to your issue.** Your description doesn't need to be concise, but should be clear/understandable and provide enough information for other contributors to solve the issue. For that I provided an issue template. 
 
 ## Python_Chatbot
 You might have seen that I published also a quite similar repository called Python_Chatbot [https://github.com/wsdt/Python_chatbot]. The Python_Chatbot repository is only a simple chatbot for your Telegram app, which can conversate with you and has some additional features like some information about your Instagram account, random quotes/pics/questions etc. 
