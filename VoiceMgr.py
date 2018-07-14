@@ -9,7 +9,9 @@ import urllib
 import os
 from PyChatbot import PyChatbot
 import threading
+import pyttsx3
 
+assistantVoice = pyttsx3.init()
 LAST_VOICE_FILE = "user_voice_msg.ogg"
 
 def liveSpeech():
@@ -26,7 +28,11 @@ def liveSpeech():
 
 
 def getAssistantResponse(phrase):
-    print("Assistant response: \""+str(PyChatbot.getAnswer(phrase))+"\"")
+    answer = str(PyChatbot.getAnswer(phrase))
+    print("Assistant response: \""+answer+"\"")
+    #http://pyttsx3.readthedocs.io/en/latest/engine.html
+    assistantVoice.say(answer)
+    assistantVoice.runAndWait()
 
 def downloadVoiceFile(update):
     filedata = urllib.request.urlopen(str(update.message.voice.get_file().file_path)).read()
