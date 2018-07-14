@@ -11,7 +11,7 @@ Project currently under development, so there are no production-ready releases y
 This project is licensed under Apache 2.0, so contributions/pull-requests are welcome. All contributors get listed here. 
 
 **Contributors** [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/kennethreitz)
-- Kevin Riedl ([WSDT](https://github.com/wsdt)
+- Kevin Riedl ([WSDT](https://github.com/wsdt))
 
 ## How to get started
 Start main.py to use the full functional home assistant. I recommend that you use Docker, for that I have provided a [Dockerfile](https://github.com/wsdt/Python_HomeAssistant/blob/master/docker/Dockerfile).
@@ -24,7 +24,7 @@ After that you will be able to use the bot in Telegram with all it's features.
 
 ### Docker-Ready
 To start the bot without any complications I made a Dockerfile for you guys. Just switch to the subdirectory 'docker' and you will see the Dockerfile. 
-1. Build the dockerfile: 
+1. Build the dockerfile with the CONFIDENTIAL.py-file in the same directory as the Dockerfile. 
 ``` docker build -t wsdt/homeAssistant . ```
 1. Start a new container out of the newly created/built image: 
 ``` docker run wsdt/homeAssistant ```
