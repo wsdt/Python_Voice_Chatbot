@@ -10,9 +10,13 @@ You might need the CONFIDENTIAL.py file to use this assistant without restrictio
 which contains example parameters. Please change all params and then rename the file to "CONFIDENTIAL.py". I added the confidential file to the projects [.gitignore](https://github.com/wsdt/Python_HomeAssistant/blob/master/.gitignore). 
 
 ### Docker-Ready
-To start the bot without any complications I made a [Dockerfile](https://github.com/wsdt/Python_HomeAssistant/blob/master/Dockerfile) for you guys.
-1. Build the dockerfile with the CONFIDENTIAL.py-file in the same directory as the Dockerfile. 
-``` docker build -t wsdt/homeAssistant . ```
+To start the bot without any complications I made a [Dockerfile](https://github.com/wsdt/Python_HomeAssistant/blob/master/Dockerfile) for you guys. You will find this project also on [Dockerhub (hub.docker.com/r/wsdt/python_homeassistant)](https://hub.docker.com/r/wsdt/python_homeassistant). Therefore you have two options to build the docker image: 
+1. Build docker image
+   - Build the dockerfile yourself/locally with the CONFIDENTIAL.py-file in the same directory as the Dockerfile. 
+     ``` docker build -t wsdt/homeAssistant . ```
+       **OR**
+   - You can also download the pre-compiled image from Dockerhub. Just pull the existing docker image (gets built every time a   contributor pushes on Github). **Warning: Currently, I am working on a solution to get your CONFIDENTIAL.py into the image/container. So, this variant might not work at this time.*
+     ``` docker pull wsdt/python_homeassistant ```
 1. Start a new container out of the newly created/built image: 
 ``` docker run wsdt/homeAssistant ```
 1. Verify that the container is running by: 
