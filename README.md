@@ -2,7 +2,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/graphs/commit-activity)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub license](https://img.shields.io/github/license/wsdt/Python_HomeAssistant.svg)](https://github.com/wsdt/Python_HomeAssistant/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/Python_HomeAssistant.svg)](https://GitHub.com/Python_HomeAssistant/releases/)
+[![GitHub release](https://img.shields.io/github/release/wsdt/Python_HomeAssistant.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/releases/)
 
 Start main.py to use the full functional chatbot in your Telegram app. (Later this repository will remove the Telegram functionality)
 
