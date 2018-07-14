@@ -1,10 +1,16 @@
 # Python_HomeAssistant
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/graphs/commit-activity)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub license](https://img.shields.io/github/license/wsdt/Python_HomeAssistant.svg)](https://github.com/wsdt/Python_HomeAssistant/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/wsdt/Python_HomeAssistant.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/releases/)
+Start main.py to use the full functional home assistant. I recommend that you use Docker, for that I have provided a Dockerfile: 
+https://github.com/wsdt/Python_HomeAssistant/blob/master/docker/Dockerfile
 
-Start main.py to use the full functional chatbot in your Telegram app. (Later this repository will remove the Telegram functionality)
+## Releases
+[![GitHub release](https://img.shields.io/github/release/wsdt/Python_HomeAssistant.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/releases/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/graphs/commit-activity)
+
+## Contribution
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 ## Confidential.py
 You will need the CONFIDENTIAL.py file to use this bot. For that I provided a CONFIDENTIAL_Template.py-File
