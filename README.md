@@ -17,8 +17,8 @@ This project is licensed under Apache 2.0, so contributions/pull-requests are we
 Start main.py to use the full functional home assistant. I recommend that you use Docker, for that I have provided a [Dockerfile](https://github.com/wsdt/Python_HomeAssistant/blob/master/docker/Dockerfile).
 
 ### Confidential.py
-You might need the CONFIDENTIAL.py file to use this assistant without restrictions. For that I provided a CONFIDENTIAL_Template.py-File
-which contains example parameters. Please change all params and then rename the file to "CONFIDENTIAL.py". 
+You might need the CONFIDENTIAL.py file to use this assistant without restrictions. For that I provided a [CONFIDENTIAL_Template.py-File](https://github.com/wsdt/Python_HomeAssistant/blob/master/CONFIDENTIAL_Template.py)
+which contains example parameters. Please change all params and then rename the file to "CONFIDENTIAL.py". I added the confidential file to the projects [.gitignore](https://github.com/wsdt/Python_HomeAssistant/blob/master/.gitignore). 
 
 ### Docker-Ready
 To start the bot without any complications I made a Dockerfile for you guys. Just switch to the subdirectory 'docker' and you will see the Dockerfile. 
