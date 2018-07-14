@@ -1,1 +1,0 @@
-docker run -v /sys:/sys -d wsdtAssistant
