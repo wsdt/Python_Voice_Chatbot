@@ -1,11 +1,11 @@
-# Python_HomeAssistant
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+# Python_HomeAssistant [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub license](https://img.shields.io/github/license/wsdt/Python_HomeAssistant.svg)](https://github.com/wsdt/Python_HomeAssistant/blob/master/LICENSE)
+
 Easy to use home assistant to talk to, get several information, controlling your IoT-devices and the best of all **keeping your data private/locally**. Would love to see some reactions (issues, pull-requests, etc.). Please note, that this project is young and has not all featured functionalities. 
 
-## Releases
-[![GitHub release](https://img.shields.io/github/release/wsdt/Python_HomeAssistant.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/releases/)
+## Releases [![GitHub release](https://img.shields.io/github/release/wsdt/Python_HomeAssistant.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/releases/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/graphs/commit-activity)
+Project currently under development, so there are no production-ready releases yet. 
 
 ## Contribution
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
@@ -16,8 +16,7 @@ This project is licensed under Apache 2.0, so contributions/pull-requests are we
 - Kevin Riedl ([WSDT](https://github.com/wsdt)
 
 ## How to get started
-Start main.py to use the full functional home assistant. I recommend that you use Docker, for that I have provided a Dockerfile: 
-https://github.com/wsdt/Python_HomeAssistant/blob/master/docker/Dockerfile
+Start main.py to use the full functional home assistant. I recommend that you use Docker, for that I have provided a [Dockerfile](https://github.com/wsdt/Python_HomeAssistant/blob/master/docker/Dockerfile).
 
 ### Confidential.py
 You will need the CONFIDENTIAL.py file to use this bot. For that I provided a CONFIDENTIAL_Template.py-File
