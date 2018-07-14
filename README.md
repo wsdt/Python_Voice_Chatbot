@@ -2,17 +2,6 @@
 
 Easy to use home assistant to talk to, get several information, controlling your IoT-devices and the best of all **keeping your data private/locally**. Therefore, the assistant can operate offline except some enabled apis (e.g. Instagram, etc.). Would love to see some reactions (issues, pull-requests, etc.). Please note, that this project is young and has not all featured functionalities. 
 
-## Releases [![GitHub release](https://img.shields.io/github/release/wsdt/Python_HomeAssistant.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/releases/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/graphs/commit-activity)
-
-Project currently under development, so there are no production-ready releases yet. 
-
-## Contribution [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
-This project is licensed under Apache 2.0, so contributions/pull-requests are welcome. All contributors get listed here. 
-
-**Contributors** [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/kennethreitz)
-- Kevin Riedl ([WSDT](https://github.com/wsdt))
-
 ## How to get started
 Start main.py to use the full functional home assistant. I recommend that you use Docker, for that I have provided a [Dockerfile](https://github.com/wsdt/Python_HomeAssistant/blob/master/docker/Dockerfile).
 
@@ -31,6 +20,32 @@ To start the bot without any complications I made a Dockerfile for you guys. Jus
 
 For more detailed information I recommend you to look through the [Docker-documentation](https://docs.docker.com/). 
 
+## Releases [![GitHub release](https://img.shields.io/github/release/wsdt/Python_HomeAssistant.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/releases/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/graphs/commit-activity)
+
+Project currently under development, so there are no production-ready releases yet. 
+
+## Contribution [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
+This project is licensed under Apache 2.0, so contributions/pull-requests are welcome. All contributors get listed here. 
+
+**Contributors** [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/kennethreitz)
+- Kevin Riedl ([WSDT](https://github.com/wsdt))
+
+### How to add an issue
+1. **Add a good title to your issue.** Please use a concise and precise title. 
+  * *BAD*: "ServiceMgr"
+  * *GOOD*: "Redesign/Improve ServiceMgr"
+1. **Add a good description to your issue.** Your description doesn't need to be concise, but should be clear/understandable and provide enough information for other contributors to solve the issue. *Your issue description SHOULD/MUST look like the following. For that I provided an issue template. *
+
+########## EXAMPLE ISSUE - START ##########
+- {Short description in 1-3 sentences}
+- {Describe the problem, new feature or what you want to change}
+- {Describe a possible solution to that problem, feature or desired code}
+- {Code or other facts to reproduce the issue} *(OPTIONAL, but strongly recommended)*
+- {Add a list of files which might need to be changed in order to implement the new feature/solve the bug. Please append the "py" filetype (Human.py) so we can avoid confusions. If a file hasn't been created yet, then you can use a recommended name by adding the [N] cue to it. (e.g.: Human.py[N])} *(OPTIONAL)*
+- {Maybe also add videos/pictures} *(OPTIONAL)*
+
+########## EXAMPLE ISSUE - END ##########
 
 ## Python_Chatbot
 You might have seen that I published also a quite similar repository called Python_Chatbot [https://github.com/wsdt/Python_chatbot]. The Python_Chatbot repository is only a simple chatbot for your Telegram app, which can conversate with you and has some additional features like some information about your Instagram account, random quotes/pics/questions etc. 
