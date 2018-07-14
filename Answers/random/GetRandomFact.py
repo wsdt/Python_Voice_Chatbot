@@ -165,7 +165,5 @@ class GetRandomFact(Answer):
     ]
 
     @staticmethod
-    def getAnswer(bot, update):
-        update.message.reply_text(str(
-            GetRandomFact.facts[random.randint(0,len(GetRandomFact.facts)-1)]
-        ))
+    def getAnswer(userInput):
+        return GetRandomFact.facts[random.randint(0,len(GetRandomFact.facts)-1)]

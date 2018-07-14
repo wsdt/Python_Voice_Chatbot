@@ -1,7 +1,6 @@
 from Answers._Answer import Answer
 from InstagramAPI import InstagramAPI
-from CONFIDENTIAL import INSTAGRAM_API, AUTHORIZED_USER
-import telegram
+from CONFIDENTIAL import INSTAGRAM_API
 from Helper import dict2listByKey
 
 # Uses Instagram api to do sth
@@ -10,7 +9,7 @@ class GetInstagramAnswer(Answer):
     igApi = None
 
     @staticmethod
-    def getAnswer(bot,update):
+    def getAnswer(userInput):
         # Login in Ig when api is not set yet (here, so we only login if user wants to access ig Api.
         if GetInstagramAnswer.igApi is None:
             GetInstagramAnswer.igLogin()
@@ -18,12 +17,11 @@ class GetInstagramAnswer(Answer):
         # Evaluate whether we can access the api or not
         if GetInstagramAnswer.igApi.isLoggedIn:
             print("GetInstagramAnswer: Logged in successfully.")
-            reply_btns = [GetInstagramAnswer.prepareAnswer(update.message.text)] # has to be before, so answer can get updated
-            bot.send_message(chat_id=AUTHORIZED_USER,text=GetInstagramAnswer.answer_text,
-                     reply_markup=telegram.ReplyKeyboardMarkup(reply_btns))
+            return GetInstagramAnswer.prepareAnswer(userInput) # has to be before, so answer can get updated
+
         else:
             print("GetInstagramAnswer: Could not log in into Instagram account. If you have changed your CONFIDENTIAL.py, then restart your bot.")
-            bot.send_message(chat_id=AUTHORIZED_USER,text="Could not login into Instagram.")
+            return "Could not login into Instagram."
 
 
     @staticmethod
@@ -35,15 +33,10 @@ class GetInstagramAnswer(Answer):
     # Craft reply btns and execute command if one is found.
     @staticmethod
     def prepareAnswer(userInput):
-        keyboardBtns = []
         for strCommand,commandMethod in GetInstagramAnswer.chat_commands.items():
-            keyboardBtns.append(telegram.KeyboardButton(strCommand))
-
             if strCommand == userInput:
                 # User executed a command, so save/output now the elaborated information
-                GetInstagramAnswer.answer_text = commandMethod()
-
-        return keyboardBtns
+                return commandMethod()
 
     @staticmethod
     def getFollowers():

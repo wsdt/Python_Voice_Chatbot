@@ -3,7 +3,6 @@ from Answers.random.AskRandomQuestion import AskQuestion
 from Answers.random.GetRandomFact import GetRandomFact
 from Answers.api.GetInstagramAnswer import GetInstagramAnswer
 from Answers.GetWelcomeMsg import GetWelcomeMsg
-from Answers.random.GetRandomPic import GetRandomPic
 
 
 # Class is responsible for textAnswers.
@@ -14,21 +13,16 @@ class PyChatbot():
         GetWelcomeMsg,
         AskQuestion,
         GetRandomFact,
-        GetRandomPic,
         GetInstagramAnswer
     ]
 
     # Method also used by TelegramBot
     @staticmethod
-    def getAnswer(bot, update):
-        have_answered = False
+    def getAnswer(userInput):
         for module in PyChatbot.ENABLED_MODULES:
             # text should be always a str, bc. we validated this in main.py
-            if any(x in update.message.text for x in module.chat_keywords):
-                module.getAnswer(bot, update)
-                have_answered = True
-                # no break, so we allow for multiple responses
+            if any(x in str(userInput) for x in module.chat_keywords):
+                return module.getAnswer(userInput)
 
         # Outside of for, so if nothing is returned we get a smart answer, but only if nothing answered until now
-        if not have_answered:
-            GetSmartAnswer.getAnswer(bot, update)
+        return GetSmartAnswer.getAnswer(userInput)
