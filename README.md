@@ -1,6 +1,6 @@
 # Python_HomeAssistant [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![GitHub license](https://img.shields.io/github/license/wsdt/Python_HomeAssistant.svg)](https://github.com/wsdt/Python_HomeAssistant/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Docker-Compatible-blue.svg)](https://shields.io/)
 
-Easy to use home assistant to talk to, get several information, controlling your IoT-devices and the best of all **keeping your data private/locally**. Would love to see some reactions (issues, pull-requests, etc.). Please note, that this project is young and has not all featured functionalities. 
+Easy to use home assistant to talk to, get several information, controlling your IoT-devices and the best of all **keeping your data private/locally**. Therefore, the assistant can operate offline except some enabled apis (e.g. Instagram, etc.). Would love to see some reactions (issues, pull-requests, etc.). Please note, that this project is young and has not all featured functionalities. 
 
 ## Releases [![GitHub release](https://img.shields.io/github/release/wsdt/Python_HomeAssistant.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/releases/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/graphs/commit-activity)
 
