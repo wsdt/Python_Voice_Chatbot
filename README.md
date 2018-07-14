@@ -17,10 +17,8 @@ This project is licensed under Apache 2.0, so contributions/pull-requests are we
 Start main.py to use the full functional home assistant. I recommend that you use Docker, for that I have provided a [Dockerfile](https://github.com/wsdt/Python_HomeAssistant/blob/master/docker/Dockerfile).
 
 ### Confidential.py
-You will need the CONFIDENTIAL.py file to use this bot. For that I provided a CONFIDENTIAL_Template.py-File
+You might need the CONFIDENTIAL.py file to use this assistant without restrictions. For that I provided a CONFIDENTIAL_Template.py-File
 which contains example parameters. Please change all params and then rename the file to "CONFIDENTIAL.py". 
-
-After that you will be able to use the bot in Telegram with all it's features. 
 
 ### Docker-Ready
 To start the bot without any complications I made a Dockerfile for you guys. Just switch to the subdirectory 'docker' and you will see the Dockerfile. 
@@ -30,6 +28,8 @@ To start the bot without any complications I made a Dockerfile for you guys. Jus
 ``` docker run wsdt/homeAssistant ```
 1. Verify that the container is running by: 
 ``` docker ps -a ```
+
+For more detailed information I recommend you to look through the [Docker-documentation](https://docs.docker.com/). 
 
 
 ## Python_Chatbot
