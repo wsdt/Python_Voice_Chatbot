@@ -9,7 +9,7 @@ Start main.py to use the full functional home assistant. I recommend that you us
 You might need the CONFIDENTIAL.py file to use this assistant without restrictions. For that I provided a [CONFIDENTIAL_Template.py-File](https://github.com/wsdt/Python_HomeAssistant/blob/master/CONFIDENTIAL_Template.py)
 which contains example parameters. Please change all params and then rename the file to "CONFIDENTIAL.py". I added the confidential file to the projects [.gitignore](https://github.com/wsdt/Python_HomeAssistant/blob/master/.gitignore). 
 
-### Docker-Ready
+### Docker-Ready ![Docker Build Status](https://img.shields.io/docker/build/wsdt/python_homeassistant.svg)
 To start the bot without any complications I made a [Dockerfile](https://github.com/wsdt/Python_HomeAssistant/blob/master/Dockerfile) for you guys. You will find this project also on [Dockerhub (hub.docker.com/r/wsdt/python_homeassistant)](https://hub.docker.com/r/wsdt/python_homeassistant). Therefore you have two options to build the docker image: 
 1. Build docker image
    - Build the dockerfile yourself/locally with the CONFIDENTIAL.py-file in the same directory as the Dockerfile. 
