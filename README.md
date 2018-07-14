@@ -39,17 +39,7 @@ This project is licensed under Apache 2.0, so contributions/pull-requests are we
 1. **Add a good title to your issue.** Please use a concise and precise title. 
   * *BAD*: "ServiceMgr"
   * *GOOD*: "Redesign/Improve ServiceMgr"
-1. **Add a good description to your issue.** Your description doesn't need to be concise, but should be clear/understandable and provide enough information for other contributors to solve the issue. *Your issue description SHOULD/MUST look like the following. For that I provided an issue template. *
-
-########## EXAMPLE ISSUE - START ##########
-- {Short description in 1-3 sentences}
-- {Describe the problem, new feature or what you want to change}
-- {Describe a possible solution to that problem, feature or desired code}
-- {Code or other facts to reproduce the issue} *(OPTIONAL, but strongly recommended)*
-- {Add a list of files which might need to be changed in order to implement the new feature/solve the bug. Please append the "py" filetype (Human.py) so we can avoid confusions. If a file hasn't been created yet, then you can use a recommended name by adding the [N] cue to it. (e.g.: Human.py[N])} *(OPTIONAL)*
-- {Maybe also add videos/pictures} *(OPTIONAL)*
-
-########## EXAMPLE ISSUE - END ##########
+1. **Add a good description to your issue.** Your description doesn't need to be concise, but should be clear/understandable and provide enough information for other contributors to solve the issue. For that I provided an issue template. 
 
 ## Python_Chatbot
 You might have seen that I published also a quite similar repository called Python_Chatbot [https://github.com/wsdt/Python_chatbot]. The Python_Chatbot repository is only a simple chatbot for your Telegram app, which can conversate with you and has some additional features like some information about your Instagram account, random quotes/pics/questions etc. 
