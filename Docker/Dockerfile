@@ -3,8 +3,10 @@
 # Install dependencies
 FROM python
 
-RUN pip install chatterbot && python -m pip install python-telegram-bot && \
-	pip install InstagramApi && \ 
+RUN pip install chatterbot && \
+	pip install InstagramApi && \
+	pip install pocketsphinx && \
+	pip install pyttsx3 && \
 	git clone https://github.com/wsdt/Python_HomeAssistant.git
 	
 # Copy your secrets into the image	
