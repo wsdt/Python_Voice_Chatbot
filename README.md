@@ -1,8 +1,6 @@
 # Python_HomeAssistant
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![GitHub license](https://img.shields.io/github/license/wsdt/Python_HomeAssistant.svg)](https://github.com/wsdt/Python_HomeAssistant/blob/master/LICENSE)
-Start main.py to use the full functional home assistant. I recommend that you use Docker, for that I have provided a Dockerfile: 
-https://github.com/wsdt/Python_HomeAssistant/blob/master/docker/Dockerfile
 
 ## Releases
 [![GitHub release](https://img.shields.io/github/release/wsdt/Python_HomeAssistant.svg)](https://GitHub.com/wsdt/Python_HomeAssistant/releases/)
@@ -11,14 +9,23 @@ https://github.com/wsdt/Python_HomeAssistant/blob/master/docker/Dockerfile
 ## Contribution
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+This project is licensed under Apache 2.0, so contributions/pull-requests are welcome. All contributors get listed here: 
 
-## Confidential.py
+### Contributors - Thank you!
+[![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/kennethreitz)
+* Kevin Riedl ([WSDT](https://github.com/wsdt)
+
+## How to get started
+Start main.py to use the full functional home assistant. I recommend that you use Docker, for that I have provided a Dockerfile: 
+https://github.com/wsdt/Python_HomeAssistant/blob/master/docker/Dockerfile
+
+### Confidential.py
 You will need the CONFIDENTIAL.py file to use this bot. For that I provided a CONFIDENTIAL_Template.py-File
 which contains example parameters. Please change all params and then rename the file to "CONFIDENTIAL.py". 
 
 After that you will be able to use the bot in Telegram with all it's features. 
 
-## Docker-Ready
+### Docker-Ready
 To start the bot without any complications I made a Dockerfile for you guys. Just switch to the subdirectory 'docker' and you will see the Dockerfile. 
 1. Build the dockerfile: 
 ``` docker build -t wsdt/homeAssistant . ```
