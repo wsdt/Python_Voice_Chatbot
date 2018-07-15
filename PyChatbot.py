@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from Answers.GetSmartAnswer import GetSmartAnswer
 from Answers.random.AskRandomQuestion import AskQuestion
 from Answers.random.GetRandomFact import GetRandomFact

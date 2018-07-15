@@ -2,7 +2,6 @@
 
 
 # Speech to Text and reverse
-# Testing file
 
 from pocketsphinx import LiveSpeech,AudioFile,get_model_path
 import urllib
@@ -11,9 +10,26 @@ from PyChatbot import PyChatbot
 import threading
 import pyttsx3
 
+# OUTPUT / Assistant Voice/Response +++++++++++++++
 assistantVoice = pyttsx3.init()
-LAST_VOICE_FILE = "user_voice_msg.ogg"
 
+# TODO: Make this dynamic, by saving it to the database and letting the user decide when he wants
+def configureAssistantVoice():
+    # Set voice
+    assistantVoice.setProperty('voice', "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0")
+
+    # Set speech rate (slow down so it's clearer [might be too slow/fast for other voices])
+    assistantVoice.setProperty('rate',assistantVoice.getProperty('rate')-50)
+
+
+def getAssistantResponse(phrase):
+    answer = str(PyChatbot.getAnswer(phrase))
+    print("Assistant response: \""+answer+"\"")
+    assistantVoice.say(answer)
+    assistantVoice.runAndWait()
+
+
+# INPUT / Users Voice/Response +++++++++++++++
 def liveSpeech():
     for phrase in LiveSpeech():
         print("Users message: '" + str(phrase)+"'")
@@ -25,41 +41,8 @@ def liveSpeech():
 
         #_thread.start_new_thread(getAssistantResponse, (phrase,))
 
-
-
-def getAssistantResponse(phrase):
-    answer = str(PyChatbot.getAnswer(phrase))
-    print("Assistant response: \""+answer+"\"")
-    #http://pyttsx3.readthedocs.io/en/latest/engine.html
-    assistantVoice.say(answer)
-    assistantVoice.runAndWait()
-
-def downloadVoiceFile(update):
-    filedata = urllib.request.urlopen(str(update.message.voice.get_file().file_path)).read()
-
-    with open('files/'+LAST_VOICE_FILE, 'wb') as f:
-        f.write(filedata)
-
-def test(update):
-    downloadVoiceFile(update)
-
-
-    model_path = get_model_path()
-    config = {
-        'audio_file': os.path.join("files",LAST_VOICE_FILE),
-        'verbose': False,
-        'buffer_size': 2048,
-        'no_search': False,
-        'full_utt': False,
-        'hmm': os.path.join(model_path, 'en-us'),
-        'lm': os.path.join(model_path, 'en-us.lm.bin'),
-        'dict': os.path.join(model_path, 'cmudict-en-us.dict')
-    }
-
-    for phrase in AudioFile(**config):
-        print(phrase)
-
-
-
-if __name__ == '__main__':
-    liveSpeech()
+# CONFIGURATION ++++++++++++++++++++++++++++++
+try:
+    configureAssistantVoice()
+except:
+    print("VoiceMgr: Could not configure assistants speech. Using default settings.")
