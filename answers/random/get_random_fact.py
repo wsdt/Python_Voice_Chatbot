@@ -1,9 +1,9 @@
 import random
-from answers.abstr_answer import Answer
+from answers.abstr_answer import abstr_answer
 from Helper import doWithDb
 
 
-class GetRandomFact(Answer):
+class get_random_fact(abstr_answer):
     # Keywords to get this answer
     chat_keywords = ["fact","entertain","quote"]
     facts = [
@@ -166,4 +166,4 @@ class GetRandomFact(Answer):
 
     @staticmethod
     def getAnswer(userInput):
-        return GetRandomFact.facts[random.randint(0,len(GetRandomFact.facts)-1)]
+        return get_random_fact.facts[random.randint(0, len(get_random_fact.facts) - 1)]

@@ -1,8 +1,8 @@
-from answers.abstr_answer import Answer
+from answers.abstr_answer import abstr_answer
 import random
 
 
-class AskQuestion(Answer):
+class get_random_question(abstr_answer):
     # Keywords to get this answer
     chat_keywords = ["ask","question"]
 
@@ -13,4 +13,4 @@ class AskQuestion(Answer):
 
     @staticmethod
     def getAnswer(userInput):
-        return AskQuestion.questions[random.randint(0,len(AskQuestion.questions)-1)]
+        return get_random_question.questions[random.randint(0, len(get_random_question.questions) - 1)]

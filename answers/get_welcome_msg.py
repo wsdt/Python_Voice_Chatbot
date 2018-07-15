@@ -1,7 +1,7 @@
-from answers.abstr_answer import Answer
+from answers.abstr_answer import abstr_answer
 
 
-class GetWelcomeMsg(Answer):
+class get_welcome_msg(abstr_answer):
     chat_keywords = ["/start"]
 
     @staticmethod

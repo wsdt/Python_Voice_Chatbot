@@ -1,4 +1,4 @@
-from answers.abstr_answer import Answer
+from answers.abstr_answer import abstr_answer
 import os
 from chatterbot import ChatBot
 
@@ -20,7 +20,7 @@ if trainBot:
     chatbot.train("chatterbot.corpus.english")
 
 
-class GetSmartAnswer(Answer):
+class get_smart_answer(abstr_answer):
     # No chat_keywords, bc. this is the "else"-Answer, if no keywords were found
 
     @staticmethod

@@ -1,11 +1,22 @@
 #!/usr/bin/python3
-
+from answers.get_welcome_msg import get_welcome_msg
+from answers.random.get_random_fact import get_random_fact
+from answers.random.get_random_question import get_random_question
+from answers.api.get_instagram_info import get_instagram_info
+from answers.get_smart_answer import get_smart_answer
 
 # Speech to Text and reverse
 
 from pocketsphinx import LiveSpeech
-from mgr.mgr_modules import PyChatbot
 import pyttsx3
+
+# TODO REMOVE AND REPLACE WITH DB (no import)
+ENABLED_MODULES = [
+    get_welcome_msg,
+    get_random_question,
+    get_random_fact,
+    get_instagram_info
+]
 
 # OUTPUT / Assistant Voice/Response +++++++++++++++
 assistantVoice = pyttsx3.init()
@@ -20,7 +31,15 @@ def configureAssistantVoice():
 
 
 def getAssistantResponse(phrase):
-    answer = str(PyChatbot.getAnswer(phrase))
+    for module in ENABLED_MODULES:
+        # text should be always a str, bc. we validated this in main.py
+        if any(x in str(phrase) for x in module.chat_keywords):
+            answer = str(module.getAnswer(phrase))
+            break
+
+    # Outside of for, so if nothing is returned we get a smart answer, but only if nothing answered until now
+    answer = str(get_smart_answer.getAnswer(phrase))
+
     print("Assistant response: \""+answer+"\"")
     assistantVoice.say(answer)
     assistantVoice.runAndWait()

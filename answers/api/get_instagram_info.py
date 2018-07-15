@@ -1,23 +1,30 @@
-from answers.abstr_answer import Answer
+from answers.abstr_answer import abstr_answer
 from InstagramAPI import InstagramAPI
-from CONFIDENTIAL import INSTAGRAM_API
 from Helper import dict2listByKey
 
+
 # Uses Instagram api to do sth
-class GetInstagramAnswer(Answer):
+class get_instagram_info(abstr_answer):
+    # TODO REMOVE AND REPLACE WITH DB
+    InstagramAPI = {
+        "USERNAME":"TEST",
+        "PASSWORD":"TEST"
+    }
+
+
     # Prepare instagram api
     igApi = None
 
     @staticmethod
     def getAnswer(userInput):
         # Login in Ig when api is not set yet (here, so we only login if user wants to access ig Api.
-        if GetInstagramAnswer.igApi is None:
-            GetInstagramAnswer.igLogin()
+        if get_instagram_info.igApi is None:
+            get_instagram_info.igLogin()
 
         # Evaluate whether we can access the api or not
-        if GetInstagramAnswer.igApi.isLoggedIn:
+        if get_instagram_info.igApi.isLoggedIn:
             print("GetInstagramAnswer: Logged in successfully.")
-            return GetInstagramAnswer.prepareAnswer(userInput) # has to be before, so answer can get updated
+            return get_instagram_info.prepareAnswer(userInput) # has to be before, so answer can get updated
 
         else:
             print("GetInstagramAnswer: Could not log in into Instagram account. If you have changed your CONFIDENTIAL.py, then restart your bot.")
@@ -26,14 +33,14 @@ class GetInstagramAnswer(Answer):
 
     @staticmethod
     def igLogin():
-        GetInstagramAnswer.igApi = InstagramAPI(INSTAGRAM_API["USERNAME"], INSTAGRAM_API["PASSWORD"])
-        GetInstagramAnswer.igApi.login()
+        get_instagram_info.igApi = InstagramAPI(get_instagram_info.INSTAGRAM_API["USERNAME"], get_instagram_info.INSTAGRAM_API["PASSWORD"])
+        get_instagram_info.igApi.login()
 
 
     # Craft reply btns and execute command if one is found.
     @staticmethod
     def prepareAnswer(userInput):
-        for strCommand,commandMethod in GetInstagramAnswer.chat_commands.items():
+        for strCommand,commandMethod in get_instagram_info.chat_commands.items():
             if strCommand == userInput:
                 # User executed a command, so save/output now the elaborated information
                 return commandMethod()
@@ -48,15 +55,15 @@ class GetInstagramAnswer(Answer):
             if next_max_id is True:
                 next_max_id = ''
 
-            _ = GetInstagramAnswer.igApi.getUserFollowers(GetInstagramAnswer.igApi.username_id, maxid=next_max_id)
-            followers.extend(GetInstagramAnswer.igApi.LastJson.get('users',[]))
-            next_max_id = GetInstagramAnswer.igApi.LastJson.get('next_max_id','')
+            _ = get_instagram_info.igApi.getUserFollowers(get_instagram_info.igApi.username_id, maxid=next_max_id)
+            followers.extend(get_instagram_info.igApi.LastJson.get('users', []))
+            next_max_id = get_instagram_info.igApi.LastJson.get('next_max_id', '')
         return "You have currently "+str(len(followers))+" Followers on Instagram."
 
     @staticmethod
     def getFollowings():
         # Returns total count of followings of user
-        GetInstagramAnswer.igApi.getUsernameInfo(INSTAGRAM_API["USERNAME"])
+        get_instagram_info.igApi.getUsernameInfo(get_instagram_info.INSTAGRAM_API["USERNAME"])
 
         following = []
         next_max_id = True
@@ -65,9 +72,9 @@ class GetInstagramAnswer(Answer):
             if next_max_id is True:
                 next_max_id = ''
 
-            _ = GetInstagramAnswer.igApi.getUserFollowings(INSTAGRAM_API["USERNAME"], maxid=next_max_id)
-            following.extend(GetInstagramAnswer.igApi.LastJson.get('users', []))
-            next_max_id = GetInstagramAnswer.igApi.LastJson.get('next_max_id','')
+            _ = get_instagram_info.igApi.getUserFollowings(get_instagram_info.INSTAGRAM_API["USERNAME"], maxid=next_max_id)
+            following.extend(get_instagram_info.igApi.LastJson.get('users', []))
+            next_max_id = get_instagram_info.igApi.LastJson.get('next_max_id', '')
 
         # Filter by primary key
         unique_following = {
