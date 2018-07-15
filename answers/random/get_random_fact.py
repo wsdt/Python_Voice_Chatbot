@@ -1,6 +1,5 @@
 import random
 from answers.abstr_answer import abstr_answer
-from Helper import doWithDb
 
 
 class get_random_fact(abstr_answer):

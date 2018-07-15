@@ -6,7 +6,7 @@ from Helper import dict2listByKey
 # Uses Instagram api to do sth
 class get_instagram_info(abstr_answer):
     # TODO REMOVE AND REPLACE WITH DB
-    InstagramAPI = {
+    INSTAGRAM_API = {
         "USERNAME":"TEST",
         "PASSWORD":"TEST"
     }
