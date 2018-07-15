@@ -1,4 +1,4 @@
-from Answers._Answer import Answer
+from answers.abstr_answer import Answer
 from InstagramAPI import InstagramAPI
 from CONFIDENTIAL import INSTAGRAM_API
 from Helper import dict2listByKey
@@ -79,6 +79,7 @@ class GetInstagramAnswer(Answer):
 
 
     # MEMBERS -------------------------------------------------------------------------
+    # TODO: Migrate to speakable command
     chat_commands = {
         "/getIgFollowers":getFollowers.__func__,
         "/getIgFollowings":getFollowings.__func__

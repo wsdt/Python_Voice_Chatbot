@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-from Answers.GetSmartAnswer import GetSmartAnswer
-from Answers.random.AskRandomQuestion import AskQuestion
-from Answers.random.GetRandomFact import GetRandomFact
-from Answers.api.GetInstagramAnswer import GetInstagramAnswer
-from Answers.GetWelcomeMsg import GetWelcomeMsg
+from answers.get_smart_answer import GetSmartAnswer
+from answers.random.get_random_question import AskQuestion
+from answers.random.get_random_fact import GetRandomFact
+from answers.api.get_instagram_info import GetInstagramAnswer
+from answers.get_welcome_msg import GetWelcomeMsg
 
 
 # Class is responsible for textAnswers.

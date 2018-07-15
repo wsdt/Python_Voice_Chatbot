@@ -3,11 +3,8 @@
 
 # Speech to Text and reverse
 
-from pocketsphinx import LiveSpeech,AudioFile,get_model_path
-import urllib
-import os
-from PyChatbot import PyChatbot
-import threading
+from pocketsphinx import LiveSpeech
+from mgr.mgr_modules import PyChatbot
 import pyttsx3
 
 # OUTPUT / Assistant Voice/Response +++++++++++++++

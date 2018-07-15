@@ -1,4 +1,4 @@
-from Answers._Answer import Answer
+from answers.abstr_answer import Answer
 
 
 class GetWelcomeMsg(Answer):

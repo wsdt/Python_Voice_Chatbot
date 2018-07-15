@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
-from VoiceMgr import liveSpeech
-from threading import Thread
-
+from mgr.mgr_voices import liveSpeech
 
 
 def main():

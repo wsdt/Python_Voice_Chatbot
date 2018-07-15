@@ -1,5 +1,5 @@
 import random
-from Answers._Answer import Answer
+from answers.abstr_answer import Answer
 from Helper import doWithDb
 
 

@@ -1,4 +1,4 @@
-from Answers._Answer import Answer
+from answers.abstr_answer import Answer
 import os
 from chatterbot import ChatBot
 
