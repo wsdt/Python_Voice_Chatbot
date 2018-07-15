@@ -10,7 +10,7 @@ You might need the CONFIDENTIAL.py file to use this assistant without restrictio
 which contains example parameters. Please change all params and then rename the file to "CONFIDENTIAL.py". I added the confidential file to the projects [.gitignore](https://github.com/wsdt/Python_HomeAssistant/blob/master/.gitignore). 
 
 ### Docker-Ready ![Docker Build Status](https://img.shields.io/docker/build/wsdt/python_homeassistant.svg)
-**IMPORTANT: Dockerbuild is currently successful, but the container start has still a bug (see issues).**
+**IMPORTANT: Dockerfile has currently two bugs.**
 
 To start the bot without any complications I made a [Dockerfile](https://github.com/wsdt/Python_HomeAssistant/blob/master/Dockerfile) for you guys. You will find this project also on [Dockerhub (hub.docker.com/r/wsdt/python_homeassistant)](https://hub.docker.com/r/wsdt/python_homeassistant). Therefore you have two options to build the docker image: 
 1. Build docker image
