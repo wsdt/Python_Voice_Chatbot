@@ -26,4 +26,5 @@ def config_confidential():
 # Only invoked when confidential.py exists
 def save_confidential(dbCursor):
     print("configure: Saving confidential.py.")
+    #TODO: use orm e.g. peewee or similar
     #TODO: convert confidential py to db and create tables if they dont exist
