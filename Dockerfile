@@ -10,6 +10,7 @@ RUN python -m pip install --upgrade pip setuptools wheel && apt-get update && \
 	pip install chatterbot && \
 	pip install InstagramApi && \ 
 	pip install pyttsx3 && \
+	pip install peewee && \
 	git clone https://github.com/wsdt/Python_HomeAssistant.git
 	
 # Copy your secrets into the image	

@@ -3,6 +3,7 @@ from answers.random.get_random_fact import get_random_fact
 from answers.random.get_random_question import get_random_question
 from answers.api.get_instagram_info import get_instagram_info
 
+
 """ This file is only needed ONCE (when executing the assistant the first time).
 
  Nevertheless, if you don't delete/rename this file (regardless of making changes), then 
@@ -54,3 +55,4 @@ INSTAGRAM_API = {
     "USERNAME":"YOUR_USERNAME_HERE",
     "PASSWORD":"YOUR_PASSWORD_HERE"
 }
+
