@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-from answers.get_welcome_msg import get_welcome_msg
-from answers.random.get_random_fact import get_random_fact
-from answers.random.get_random_question import get_random_question
-from answers.api.get_instagram_info import get_instagram_info
-from answers.get_smart_answer import get_smart_answer
+from modules.get_welcome_msg import get_welcome_msg
+from modules.get_random_fact.get_random_fact import get_random_fact
+from modules.get_random_question.get_random_question import get_random_question
+from starterkit.get_smart_answer import get_smart_answer
 
 # Speech to Text and reverse
 
@@ -14,8 +13,7 @@ import pyttsx3
 ENABLED_MODULES = [
     get_welcome_msg,
     get_random_question,
-    get_random_fact,
-    get_instagram_info
+    get_random_fact
 ]
 
 # OUTPUT / Assistant Voice/Response +++++++++++++++

@@ -1,0 +1,2 @@
+import modules.get_random_fact.conf
+import modules.get_random_fact.get_random_fact

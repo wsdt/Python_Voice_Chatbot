@@ -1,12 +1,10 @@
-import sqlite3
+from peewee import *
+from starterkit.conf import db
 
-""" Manages the dbConnections 
-@:param whatToDo -> Is a function which needs a dbCursor as
-    parameter. Inside this method the dbOperations are executed.
-"""
-def doWithDb(whatToDo):
-    db = sqlite3.connect('db')
-    # Execute provided function with dbCursor
-    whatToDo(db.cursor())
-    db.commit() # save changes
-    db.close()
+def db_loadEnabledModules():
+    # TODO: online (https://sqliteonline.com/) all sql tables are created, but here it seems that only the chatterbot ones are created
+    print(str(
+        db.get_tables()
+    ))
+
+db_loadEnabledModules()

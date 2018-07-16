@@ -1,7 +1,7 @@
-from answers.get_welcome_msg import get_welcome_msg
-from answers.random.get_random_fact import get_random_fact
-from answers.random.get_random_question import get_random_question
-from answers.api.get_instagram_info import get_instagram_info
+from modules.get_welcome_msg import get_welcome_msg
+from modules.get_random_fact.get_random_fact import get_random_fact
+from modules.get_random_question.get_random_question import get_random_question
+from modules.get_instagram_info.get_instagram_info import get_instagram_info
 
 
 """ This file is only needed ONCE (when executing the assistant the first time).
