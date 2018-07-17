@@ -1,5 +1,5 @@
 from starterkit.abstr_answer import abstr_answer
-from starterkit.conf import chatbot
+from starterkit.fallback_module.conf import chatbot
 
 class get_smart_answer(abstr_answer):
     def getAnswer(self,userInput):

@@ -57,7 +57,7 @@ several keywords there you can decide when your getAnswer() method
 get's invoked. If your new module causes an error, then at least
 one of the keywords you have used is already in use by another enabled
 module. So, just remove the other module from the enabled_modules list 
-in the CONFIDENTIAL.py OR change the keyword(s) in your module. 
+in the setup.py OR change the keyword(s) in your module. 
 -> Later, we might add the possibility to use the same keywords as other 
 -> modules (for that just leave an issue on Github)
 """

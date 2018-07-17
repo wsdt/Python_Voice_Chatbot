@@ -1,4 +1,3 @@
-import os, sys
 from chatterbot import ChatBot
 from peewee import SqliteDatabase
 from global_constants import DB_NAME

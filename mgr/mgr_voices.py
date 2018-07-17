@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from starterkit.get_smart_answer import get_smart_answer
+from starterkit.fallback_module.get_smart_answer import get_smart_answer
 from mgr.mgr_db import db_loadEnabledModules
 
 # Speech to Text and reverse
