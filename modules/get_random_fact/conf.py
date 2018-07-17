@@ -4,7 +4,7 @@ from entities.ent_chat_keyword import ChatKeyword
 
 ENABLED_MODULE = EnabledModule (
     class_name="get_random_fact",
-    custom_json_settings=json.dumps({
+    custom_json_settings={
         "random_facts": [
             "The way get started is to quit talking and begin doing. (Walt Disney)",
             "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty. (Winston Churchill)",
@@ -162,7 +162,7 @@ ENABLED_MODULE = EnabledModule (
             "You change your life by changing your heart. (Max Lucado)",
             "A champion is someone who gets up when he can't. (Jack Dempsey)"
         ]
-    })
+    }
 )
 
 CHAT_KEYWORDS = [

@@ -1,4 +1,5 @@
 from abc import abstractmethod, ABC
+import json
 from entities.ent_enabled_module_has_chat_keyword import EnabledModuleHasChatKeyword
 from entities.ent_enabled_module import EnabledModule
 from entities.ent_chat_keyword import ChatKeyword
@@ -72,10 +73,8 @@ class abstr_answer(ABC):
 
     def db_loadCustom_json_settings(self):
         if self.__custom_json_settings is None:
-            self.__custom_json_settings = (EnabledModule.select(EnabledModule.custom_json_settings)
-                                           .where(EnabledModule.class_name == self.getStrClassName()))
-
-        # TODO: to make other modules work
+            # Get first row [0], if no row found a exception might be thrown
+            self.__custom_json_settings = json.loads((EnabledModule.select().where(EnabledModule.class_name == self.getStrClassName()))[0].custom_json_settings)
 
         return self.__custom_json_settings
 

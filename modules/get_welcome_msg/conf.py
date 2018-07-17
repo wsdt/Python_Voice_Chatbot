@@ -3,7 +3,7 @@ from entities.ent_chat_keyword import ChatKeyword
 
 ENABLED_MODULE = EnabledModule(
     class_name="get_welcome_msg",
-    custom_json_settings="{}"
+    custom_json_settings={}
 )
 
 CHAT_KEYWORDS = [
