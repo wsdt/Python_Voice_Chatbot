@@ -22,14 +22,16 @@ def configureAssistantVoice():
 
 
 def getAssistantResponse(phrase):
+    haveAnswered = False
+    answer = "Unknown error"
     for module in ENABLED_MODULES:
         # text should be always a str, bc. we validated this in main.py
-        if any(x in str(phrase) for x in module.chat_keywords): # TODO: get keywords from db
+        if any(x in str(phrase) for x in module.getChatKeywords()):
             answer = str(module.getAnswer(phrase))
-            break
+            haveAnswered = True
 
     # Outside of for, so if nothing is returned we get a smart answer, but only if nothing answered until now
-    answer = str(get_smart_answer.getAnswer(phrase))
+    if not haveAnswered: answer = str(get_smart_answer.getAnswer(phrase))
 
     print("Assistant response: \""+answer+"\"")
     assistantVoice.say(answer)

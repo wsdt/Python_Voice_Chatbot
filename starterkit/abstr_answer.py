@@ -1,4 +1,5 @@
 from abc import abstractmethod, ABC
+from mgr.mgr_db import db_loadChatKeywordsOfModule
 
 """ PARENT CLASS = MODULE layout 
 
@@ -60,7 +61,13 @@ in the CONFIDENTIAL.py OR change the keyword(s) in your module.
 
 # Extend from ABC (to be abstract) and from EnabledModule (to be a db entity)
 class abstr_answer(ABC):
-    @staticmethod
+    __chat_keywords = None # private emulation
+
+    def getChatKeywords(self):
+        if self.__chat_keywords is None:
+            self.__chat_keywords = db_loadChatKeywordsOfModule(str(type(self).__name__))
+        return self.__chat_keywords
+
     @abstractmethod
-    def getAnswer(userInput):
+    def getAnswer(self,userInput):
         raise NotImplementedError

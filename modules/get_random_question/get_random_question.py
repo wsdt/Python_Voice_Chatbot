@@ -3,6 +3,5 @@ import random
 
 
 class get_random_question(abstr_answer):
-    @staticmethod
-    def getAnswer(userInput):
+    def getAnswer(self, userInput):
         return get_random_question.questions[random.randint(0, len(get_random_question.questions) - 1)]
