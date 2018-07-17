@@ -1,5 +1,7 @@
 from abc import abstractmethod, ABC
-from mgr.mgr_db import db_loadChatKeywordsOfModule
+from entities.ent_enabled_module_has_chat_keyword import EnabledModuleHasChatKeyword
+from entities.ent_enabled_module import EnabledModule
+from entities.ent_chat_keyword import ChatKeyword
 
 """ PARENT CLASS = MODULE layout 
 
@@ -62,12 +64,41 @@ in the CONFIDENTIAL.py OR change the keyword(s) in your module.
 # Extend from ABC (to be abstract) and from EnabledModule (to be a db entity)
 class abstr_answer(ABC):
     __chat_keywords = None # private emulation
-
-    def getChatKeywords(self):
-        if self.__chat_keywords is None:
-            self.__chat_keywords = db_loadChatKeywordsOfModule(str(type(self).__name__))
-        return self.__chat_keywords
+    __custom_json_settings = None # private emulation
 
     @abstractmethod
     def getAnswer(self,userInput):
         raise NotImplementedError
+
+    def db_loadCustom_json_settings(self):
+        if self.__custom_json_settings is None:
+            self.__custom_json_settings = (EnabledModule.select(EnabledModule.custom_json_settings)
+                                           .where(EnabledModule.class_name == self.getStrClassName()))
+
+        # TODO: to make other modules work
+
+        return self.__custom_json_settings
+
+    """ Load chat_keywords from database and return it as list. 
+    @param moduleStr: className -> e.g. use: get_welcome_msg().getClassName() """
+    def db_loadChatKeywordsOfModule(self):
+        resultSet = (ChatKeyword.select()
+                     .where(EnabledModule.class_name == self.getStrClassName())
+                     .join(EnabledModuleHasChatKeyword)
+                     .switch(EnabledModuleHasChatKeyword)
+                     .join(EnabledModule))
+
+        #TODO: Maybe return objs in future instead
+        keywords = []
+        for keyword_row in resultSet:
+            keywords.append(str(keyword_row))
+
+        return keywords
+
+    def getChatKeywords(self):
+        if self.__chat_keywords is None:
+            self.__chat_keywords = self.db_loadChatKeywordsOfModule()
+        return self.__chat_keywords
+
+    def getStrClassName(self):
+        return str(type(self).__name__)

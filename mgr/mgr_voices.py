@@ -31,7 +31,7 @@ def getAssistantResponse(phrase):
             haveAnswered = True
 
     # Outside of for, so if nothing is returned we get a smart answer, but only if nothing answered until now
-    if not haveAnswered: answer = str(get_smart_answer.getAnswer(phrase))
+    if not haveAnswered: answer = str(get_smart_answer().getAnswer(phrase)) #todo: remove instance in method
 
     print("Assistant response: \""+answer+"\"")
     assistantVoice.say(answer)
