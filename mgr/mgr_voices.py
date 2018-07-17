@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-
+from starterkit.fallback_module.get_smart_answer import get_smart_answer
+from mgr.mgr_db import db_loadEnabledModules
 
 # Speech to Text and reverse
-
 from pocketsphinx import LiveSpeech
-from mgr.mgr_modules import PyChatbot
 import pyttsx3
+
+ENABLED_MODULES = db_loadEnabledModules() # do only once for better performance
+FALLBACK_MODULE = get_smart_answer() # shouldn't be changed, unless you know what you are doing
 
 # OUTPUT / Assistant Voice/Response +++++++++++++++
 assistantVoice = pyttsx3.init()
@@ -20,7 +22,17 @@ def configureAssistantVoice():
 
 
 def getAssistantResponse(phrase):
-    answer = str(PyChatbot.getAnswer(phrase))
+    have_answered = False
+    answer = "Unknown error"
+    for module in ENABLED_MODULES:
+        # text should be always a str, bc. we validated this in main.py
+        if any(x in str(phrase) for x in module.getChatKeywords()):
+            answer = str(module.getAnswer(phrase))
+            have_answered = True
+
+    # Outside of for, so if nothing is returned we get a smart answer, but only if nothing answered until now
+    if not have_answered: answer = str(FALLBACK_MODULE.getAnswer(phrase))
+
     print("Assistant response: \""+answer+"\"")
     assistantVoice.say(answer)
     assistantVoice.runAndWait()
@@ -28,6 +40,7 @@ def getAssistantResponse(phrase):
 
 # INPUT / Users Voice/Response +++++++++++++++
 def liveSpeech():
+    print("Starting speech recognition.")
     for phrase in LiveSpeech():
         print("Users message: '" + str(phrase)+"'")
         # answer as text message

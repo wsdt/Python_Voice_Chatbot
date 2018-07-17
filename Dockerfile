@@ -8,8 +8,8 @@ RUN python -m pip install --upgrade pip setuptools wheel && apt-get update && \
 	apt-get install -y build-essential swig git libpulse-dev libasound2-dev espeak && \
 	pip install --upgrade pocketsphinx && \
 	pip install chatterbot && \
-	pip install InstagramApi && \ 
 	pip install pyttsx3 && \
+	pip install peewee && \
 	git clone https://github.com/wsdt/Python_HomeAssistant.git
 	
 # Copy your secrets into the image	
