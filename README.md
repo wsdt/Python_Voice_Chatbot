@@ -7,7 +7,7 @@ To get your home assistant running you just have to take 1-2 steps (depends on w
 1. Execute *setup.py* once, if you newly downloaded this assistant
 1. Execute *main.py*
 
-Above steps will work assuming that you have all python libraries installed. Considering that I recommend using Docker, for that I have provided a [Dockerfile](https://github.com/wsdt/Python_HomeAssistant/blob/master/docker/Dockerfile).
+Above steps will work assuming that you have all python libraries installed. Considering this I recommend using Docker, for that I have provided a [Dockerfile](https://github.com/wsdt/Python_HomeAssistant/blob/master/Dockerfile).
 
 ### Docker-Ready ![Docker Build Status](https://img.shields.io/docker/build/wsdt/python_homeassistant.svg)
 **IMPORTANT: Dockerfile has currently two bugs.**
