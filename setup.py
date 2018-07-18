@@ -1,4 +1,5 @@
 import os
+import pip
 from global_constants import DB_NAME
 
 # We have to determine this BEFORE calling other imports to prevent creating an empty db before execution of config-script
@@ -7,9 +8,7 @@ db_exists =  os.path.exists(DB_NAME)
 from peewee import *
 import modules
 from starterkit.fallback_module.conf import chatbot, db
-from entities.ent_chat_keyword import ChatKeyword
-from entities.ent_enabled_module import EnabledModule
-from entities.ent_enabled_module_has_chat_keyword import EnabledModuleHasChatKeyword
+from entities import *
 
 """ This file is only needed ONCE (when executing the assistant the first time).
 
@@ -49,17 +48,22 @@ ENABLED_MODULES = [
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ """
 
+# Installer of dependencies (used e.g. by conf.py's)
+def install_dependency(package):
+    pip.main(['install', package])
+
 if not db_exists: # do not evaluate here again whether db exists (bc. of imports and automatic creation on connection etc.)
     print("Starting assistant setup.")
 
     """ +++++++++ Train assistant (= default module (not removeable without coding) +++
     -> Train bot/assistant with default language (english) """
     print("Training assistant, this can take a while.")
+    #TODO: make language configurable (also modules) and also train via twitter (also language chooseable)
     chatbot.train("chatterbot.corpus.english")
 
 
     # +++++++++++++++++++++++ Database setup - Persistence ++++++++++++++++++++++++++
-    print("CONFIDENTIAL: Starting db setup.")
+    print("SETUP: Starting db and dependency setup.")
 
     # Connect to db, create db structure and insert data
     db.connect()
@@ -72,20 +76,27 @@ if not db_exists: # do not evaluate here again whether db exists (bc. of imports
         # Save configured module from conf.py file
         if module.conf.ENABLED_MODULE.save() <= 0:
             print("CONFIDENTIAL:ERROR: Could not enable module -> "+str(module.conf.ENABLED_MODULE.class_name))
-        # Save all keywords of enabled module + save relationship afterwards
-        for chat_keyword in module.conf.CHAT_KEYWORDS:
-            # Save keyword
-            if chat_keyword.save() <= 0:
-                print("CONFIDENTIAL:ERROR: Could not save keyword -> "+str(chat_keyword.chat_keyword))
-            # Create relationship to module
-            if EnabledModuleHasChatKeyword(
-                enabled_module_id=module.conf.ENABLED_MODULE,
-                chat_keyword_id=chat_keyword
-            ).save() <= 0:
-                print("CONFIDENTIAL:ERROR: Could not establish relationship between -> "+str(module.conf.ENABLED_MODULE.class_name)+" and "+str(chat_keyword.chat_keyword))
+        else: # only save module specific params if previous operation was successful.
+            # Save all keywords of enabled module + save relationship afterwards
+            for chat_keyword in module.conf.CHAT_KEYWORDS:
+                # Save keyword
+                if chat_keyword.save() <= 0:
+                    print("CONFIDENTIAL:ERROR: Could not save keyword -> "+str(chat_keyword.chat_keyword))
+                else: # only save relationship if keyword saving was successful
+                    # Create relationship to module
+                    if EnabledModuleHasChatKeyword(
+                        enabled_module_id=module.conf.ENABLED_MODULE,
+                        chat_keyword_id=chat_keyword
+                    ).save() <= 0:
+                        print("CONFIDENTIAL:ERROR: Could not establish relationship between -> "+str(module.conf.ENABLED_MODULE.class_name)+" and "+str(chat_keyword.chat_keyword))
+
+            # After db setup of single module, start dependency installing of module
+            for dependency in module.conf.DEPENDENCIES:
+                install_dependency(dependency)
+
+    print("SETUP: Ended db and dependency setup.")
 
 
-    print("CONFIDENTIAL: Ended db setup.")
 
 
     # TODO: Delete conf.py's after successful installation (or ask user to remove installation data = BETTER), bc. only needed once

@@ -1,8 +1,9 @@
 from entities.ent_enabled_module import EnabledModule
 from entities.ent_chat_keyword import ChatKeyword
+from modules.get_random_question.get_random_question import get_random_question
 
 ENABLED_MODULE = EnabledModule(
-    class_name="get_random_question",
+    class_name=get_random_question().getStrClassName(),
     custom_json_settings={
         "random_questions": [
             "What's your favorite series?",
@@ -212,3 +213,6 @@ ENABLED_MODULE = EnabledModule(
 CHAT_KEYWORDS = [
     ChatKeyword(chat_keyword="question")
 ]
+
+# Dependencies of the module
+DEPENDENCIES = []

@@ -1,8 +1,6 @@
 from abc import abstractmethod, ABC
 import json
-from entities.ent_enabled_module_has_chat_keyword import EnabledModuleHasChatKeyword
-from entities.ent_enabled_module import EnabledModule
-from entities.ent_chat_keyword import ChatKeyword
+from entities import *
 
 """ PARENT CLASS = MODULE layout 
 
@@ -43,7 +41,7 @@ set the keywords yet and other important metadata yet. For that we have
 the conf.py-file. 
 
     ENABLED_MODULE = EnabledModule( # do not change
-        class_name="get_weather_info", # just place here the same name as for your superior folder, the class name and the module-file
+        class_name=get_weather_info().getStrClassName(), # just place here the same name as for your superior folder, the class name and the module-file
         custom_json_settings="{}" # Here you could place a json, which can be dynamically used by your module (without restrictions). 
     )
     
@@ -101,3 +99,5 @@ class abstr_answer(ABC):
 
     def getStrClassName(self):
         return str(type(self).__name__)
+
+
