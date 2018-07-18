@@ -15,7 +15,7 @@ Just take a look into __init__.py-files of other modules.
 
 3. Create your module logic by creating a .py-file, which exact the same
 name as your superior module folder. 
-    e.g. get_weather_info.py, get_traffic_info.py, get_cinemy_info.py
+    e.g. get_welcome_msg.py, get_traffic_info.py, get_cinemy_info.py
     
 3.1. Write your logic by extending from this class. As class name, please
 use the same name as for your superior directory and the filename of your 

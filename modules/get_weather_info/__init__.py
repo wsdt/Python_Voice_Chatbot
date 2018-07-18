@@ -1,2 +1,0 @@
-import modules.get_weather_info.conf
-import modules.get_weather_info.get_weather_info
