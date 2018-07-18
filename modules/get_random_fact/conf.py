@@ -171,3 +171,5 @@ CHAT_KEYWORDS = [
     ChatKeyword(chat_keyword="fact")
 ]
 
+# Dependencies of the module
+DEPENDENCIES = []

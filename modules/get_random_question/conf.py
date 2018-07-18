@@ -213,3 +213,6 @@ ENABLED_MODULE = EnabledModule(
 CHAT_KEYWORDS = [
     ChatKeyword(chat_keyword="question")
 ]
+
+# Dependencies of the module
+DEPENDENCIES = []
