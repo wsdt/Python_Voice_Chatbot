@@ -51,6 +51,6 @@ Project not maintained due to other projects, which tried to do the same.
 2. **Add a good description to your issue.** Your description doesn't need to be concise, but should be clear/understandable and provide enough information for other contributors to solve the issue. For that I provided an issue template. 
 
 ## Python_Chatbot
-You might have seen that I published also a quite similar repository called Python_Chatbot [https://github.com/wsdt/Python_chatbot]. The Python_Chatbot repository is only a simple chatbot for your Telegram app, which can conversate with you and has some additional features like some information about your Instagram account, random quotes/pics/questions etc. 
+You might have seen that I published also a quite similar repository called Python_Telegram_Chatbot [https://github.com/wsdt/Python_Telegram_Chatbot]. The Python_Chatbot repository is only a simple chatbot for your Telegram app, which can conversate with you and has some additional features like some information about your Instagram account, random quotes/pics/questions etc. 
 
 In contrast to that **this** repository provides are more modular interface and does not communicate via Telegram, but via voice with you. 
