@@ -12,15 +12,15 @@ Above steps will work assuming that you have all python libraries installed. Con
 ### Docker-Ready ![Docker Build Status](https://img.shields.io/docker/build/wsdt/python_homeassistant.svg)
 **IMPORTANT: Currently, there is a bug in running the container [#6](https://github.com/wsdt/Python_Voice_Chatbot/issues/6) .**
 
-To start the bot without any complications I made a [Dockerfile](https://github.com/wsdt/Python_Voice_Chatbot/blob/master/Dockerfile) for you guys. You will find this project also on [Dockerhub (hub.docker.com/r/wsdt/python_homeassistant)](https://hub.docker.com/r/wsdt/python_homeassistant). Therefore you have two options to build the docker image: 
+To start the bot without any complications I made a [Dockerfile](https://github.com/wsdt/Python_Voice_Chatbot/blob/master/Dockerfile) for you guys. You will find this project also on [Dockerhub (hub.docker.com/r/wsdt/python_voice_chatbot)](https://hub.docker.com/r/wsdt/python_homeassistant). Therefore you have two options to build the docker image: 
 1. Build docker image
    - Build the dockerfile yourself/locally with the CONFIDENTIAL.py-file in the same directory as the Dockerfile. 
-     ``` docker build -t wsdt/python_homeassistant . ```
+     ``` docker build -t wsdt/python_voice_chatbot . ```
        **OR**
    - You can also download the pre-compiled image from Dockerhub. Just pull the existing docker image (gets built every time a   contributor pushes on Github). **Warning: Currently, I am working on a solution to get your CONFIDENTIAL.py into the image/container. So, this variant might not work at this time. Maybe with Docker-Secrets. *
-     ``` docker pull wsdt/python_homeassistant ```
+     ``` docker pull wsdt/python_voice_chatbot ```
 1. Start a new container out of the newly created/built image: 
-``` docker run wsdt/homeAssistant ```
+``` docker run wsdt/python_voice_chatbot ```
 1. Verify that the container is running by: 
 ``` docker ps -a ```
 
