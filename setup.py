@@ -7,9 +7,7 @@ db_exists =  os.path.exists(DB_NAME)
 from peewee import *
 import modules
 from starterkit.fallback_module.conf import chatbot, db
-from entities.ent_chat_keyword import ChatKeyword
-from entities.ent_enabled_module import EnabledModule
-from entities.ent_enabled_module_has_chat_keyword import EnabledModuleHasChatKeyword
+from entities import *
 
 """ This file is only needed ONCE (when executing the assistant the first time).
 
