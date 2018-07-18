@@ -9,7 +9,7 @@ To get your home assistant running you just have to take 1-2 steps (depends on w
 
 Above steps will work assuming that you have all python libraries installed. Considering this I recommend using Docker, for that I have provided a [Dockerfile](https://github.com/wsdt/Python_Voice_Chatbot/blob/master/Dockerfile).
 
-### Docker-Ready ![Docker Build Status](https://img.shields.io/docker/build/wsdt/python_homeassistant.svg)
+### Docker-Ready ![Docker Build Status](https://img.shields.io/docker/build/wsdt/python_voice_chatbot.svg)
 **IMPORTANT: Currently, there is a bug in running the container [#6](https://github.com/wsdt/Python_Voice_Chatbot/issues/6) .**
 
 To start the bot without any complications I made a [Dockerfile](https://github.com/wsdt/Python_Voice_Chatbot/blob/master/Dockerfile) for you guys. You will find this project also on [Dockerhub (hub.docker.com/r/wsdt/python_voice_chatbot)](https://hub.docker.com/r/wsdt/python_homeassistant). Therefore you have two options to build the docker image: 
