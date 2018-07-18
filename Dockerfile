@@ -10,11 +10,10 @@ RUN python -m pip install --upgrade pip setuptools wheel && apt-get update && \
 	pip install chatterbot && \
 	pip install pyttsx3 && \
 	pip install peewee && \
-	git clone https://github.com/wsdt/Python_HomeAssistant.git
-	
-# Copy your secrets into the image	
-COPY CONFIDENTIAL.py Python_HomeAssistant/
-	
+	git clone https://github.com/wsdt/Python_HomeAssistant.git && \
+	cd Python_HomeAssistant&&python setup.py
+
+
 # Collect newest version and then start bot
 CMD cd Python_HomeAssistant&&git pull&&python main.py
 
