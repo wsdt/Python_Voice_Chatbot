@@ -1,4 +1,4 @@
-# Python_Voice_Chatbot [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![GitHub license](https://img.shields.io/github/license/wsdt/Python_Voice_Chatbot.svg)](https://github.com/wsdt/Python_Voice_Chatbot/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Docker-Compatible-blue.svg)](https://www.docker.com/)
+# Python_Voice_Chatbot [![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/) [![GitHub license](https://img.shields.io/github/license/wsdt/Python_Voice_Chatbot.svg)](https://github.com/wsdt/Python_Voice_Chatbot/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Docker-Compatible-blue.svg)](https://www.docker.com/)
 
 Easy to use *modular* chatbot to talk to, get information from etc. (depends on enabled modules) and the best of all **keeping your data private/locally**. Therefore, the assistant can operate offline except by the use of some modules (e.g. weather module, etc.). Would love to see some reactions (issues, pull-requests, etc.). Please note, that this project is young and has not all featured functionalities. 
 
@@ -41,6 +41,8 @@ This project is licensed under GNU V3, so contributions/pull-requests are welcom
 To create new modules or changing/extending the application core, please take a look into following files, which are well commented (Better documentation follows):
 1. ./starterkit/abstr_answer.py --> How to create a new module
 1. ./setup.py --> How to install this assistant
+
+Project not maintained due to other projects, which tried to do the same. 
 
 ### How to add an issue
 1. **Add a good title to your issue.** Please use a concise and precise title. 
