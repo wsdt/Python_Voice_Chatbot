@@ -27,7 +27,7 @@ To start the bot without any complications I made a [Dockerfile](https://github.
 
 For more detailed information I recommend you to look through the [Docker-documentation](https://docs.docker.com/). 
 
-## Releases [![GitHub release](https://img.shields.io/github/release/wsdt/Python_Voice_Chatbot.svg)](https://GitHub.com/wsdt/Python_Voice_Chatbot/releases/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/wsdt/Python_Voice_Chatbot/graphs/commit-activity)
+## Releases [![GitHub release](https://img.shields.io/github/release/wsdt/Python_Voice_Chatbot.svg)](https://GitHub.com/wsdt/Python_Voice_Chatbot/releases/) 
 
 Project currently under development, so there are no production-ready releases yet. 
 
