@@ -1,5 +1,6 @@
-# TODO: Maybe add conf.py files here if they have sensitive content
-
+# sensitive content
+/secrets/secrets.py
+# db.sqlite3 PUSH DATABASE AS TRAINED
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -58,7 +59,6 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-db.sqlite3
 db.sqlite3-shm
 db.sqlite3-wal
 

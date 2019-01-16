@@ -3,7 +3,8 @@ from starterkit.fallback_module.get_smart_answer import get_smart_answer
 from mgr.mgr_db import db_loadEnabledModules
 
 # Speech to Text and reverse
-from pocketsphinx import LiveSpeech
+import speech_recognition as sr
+r = sr.Recognizer()
 import pyttsx3
 
 ENABLED_MODULES = db_loadEnabledModules() # do only once for better performance
@@ -19,7 +20,6 @@ def configureAssistantVoice():
 
     # Set speech rate (slow down so it's clearer [might be too slow/fast for other voices])
     assistantVoice.setProperty('rate',assistantVoice.getProperty('rate')-50)
-
 
 def getAssistantResponse(phrase):
     have_answered = False
@@ -39,17 +39,22 @@ def getAssistantResponse(phrase):
 
 
 # INPUT / Users Voice/Response +++++++++++++++
-def liveSpeech():
+def live_speech():
     print("Starting speech recognition.")
-    for phrase in LiveSpeech():
-        print("Users message: '" + str(phrase)+"'")
-        # answer as text message
-        """t = threading.Thread(target=getAssistantResponse, args=(phrase))
-        t.start()
-        t.join()"""
-        getAssistantResponse(phrase)
 
-        #_thread.start_new_thread(getAssistantResponse, (phrase,))
+    # https://github.com/Uberi/speech_recognition/blob/master/reference/library-reference.rst
+    with sr.Microphone() as source:
+        while True:
+            try:
+                audio = r.listen(source,phrase_time_limit=10) # listen to source
+                # use testing api key
+                text = r.recognize_google(audio, language="en-US")
+                print("Users message: '{}'".format(text))
+                getAssistantResponse(text)
+            except sr.UnknownValueError:
+                print("Sorry, I could not understand you.")
+            except sr.RequestError:
+                print("API call failed. Key valid? Internet connection?")
 
 # CONFIGURATION ++++++++++++++++++++++++++++++
 try:

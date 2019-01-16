@@ -54,13 +54,7 @@ def install_dependency(package):
 
 if not db_exists: # do not evaluate here again whether db exists (bc. of imports and automatic creation on connection etc.)
     print("Starting assistant setup.")
-
-    """ +++++++++ Train assistant (= default module (not removeable without coding) +++
-    -> Train bot/assistant with default language (english) """
-    print("Training assistant, this can take a while.")
-    #TODO: make language configurable (also modules) and also train via twitter (also language chooseable)
     chatbot.train("chatterbot.corpus.english")
-
 
     # +++++++++++++++++++++++ Database setup - Persistence ++++++++++++++++++++++++++
     print("SETUP: Starting db and dependency setup.")
@@ -93,6 +87,14 @@ if not db_exists: # do not evaluate here again whether db exists (bc. of imports
             # After db setup of single module, start dependency installing of module
             for dependency in module.conf.DEPENDENCIES:
                 install_dependency(dependency)
+
+
+    """ +++++++++ Train assistant (= default module (not removeable without coding) +++
+    -> Train bot/assistant with default language (english) """
+    print("Training assistant, this can take a while.")
+    #TODO: make language configurable (also modules) and also train via twitter (also language chooseable)
+    #chatbot.train("chatterbot.corpus.english")
+    chatbot.train()
 
     print("SETUP: Ended db and dependency setup.")
 
