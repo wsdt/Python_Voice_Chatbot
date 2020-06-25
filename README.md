@@ -10,9 +10,7 @@ To get your home assistant running you just have to take 1-2 steps (depends on w
 
 Above steps will work assuming that you have all python libraries installed. Considering this I recommend using Docker, for that I have provided a [Dockerfile](https://github.com/wsdt/Python_Voice_Chatbot/blob/master/Dockerfile).
 
-### Docker-Ready ![Docker Build Status](https://img.shields.io/docker/build/wsdt/python_voice_chatbot.svg)
-**IMPORTANT: Currently, there is a bug in running the container [#6](https://github.com/wsdt/Python_Voice_Chatbot/issues/6) .**
-
+### Docker-Ready
 To start the bot without any complications I made a [Dockerfile](https://github.com/wsdt/Python_Voice_Chatbot/blob/master/Dockerfile) for you guys. You will find this project also on [Dockerhub (hub.docker.com/r/wsdt/python_voice_chatbot)](https://hub.docker.com/r/wsdt/python_voice_chatbot). Therefore you have two options to build the docker image: 
 1. Build docker image
    - Build the dockerfile yourself/locally. 
@@ -26,10 +24,6 @@ To start the bot without any complications I made a [Dockerfile](https://github.
 ``` docker ps -a ```
 
 For more detailed information I recommend you to look through the [Docker-documentation](https://docs.docker.com/). 
-
-## Releases [![GitHub release](https://img.shields.io/github/release/wsdt/Python_Voice_Chatbot.svg)](https://GitHub.com/wsdt/Python_Voice_Chatbot/releases/) 
-
-Project currently under development, so there are no production-ready releases yet. 
 
 ## Contribution [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
